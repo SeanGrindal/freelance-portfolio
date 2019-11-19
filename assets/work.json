@@ -1,0 +1,36 @@
+{
+  "pages": [
+    {
+      "id": "creatives-landing",
+      "pageName": "Creatives Landing",
+      "description": "Creatives landing is a digital experience developed for Motiv Studio to attract creative clients.",
+      "card": {
+        "src": "https://via.placeholder.com/900x1250.png/000/fff"
+      }
+    },
+    {
+      "id": "ricochet-landing",
+      "pageName": "Ricochet Landing",
+      "description": "Ricochet landing was developed for Motiv Studio for a digital data analyses project they were developing.",
+      "card": {
+        "src": "https://via.placeholder.com/900x1250.png/000/fff"
+      }
+    },
+    {
+      "id": "zenfully-landing",
+      "pageName": "Zenfully Landing",
+      "description": "Zenfully landing was developed for Motiv Studio for a Binural Beats generating web application.",
+      "card": {
+        "src": "https://via.placeholder.com/900x1250.png/000/fff"
+      }
+    },
+    {
+      "id": "zenfully-app",
+      "pageName": "Zenfully",
+      "description": "Zenfully is a Binural Beats generating web application I worked on for Motiv Studio.",
+      "card": {
+        "src": "https://via.placeholder.com/900x1250.png/000/fff"
+      }
+    }
+  ]
+}
