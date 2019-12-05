@@ -2,21 +2,23 @@
   <div class="section-header bold">
     <div class="luxy-el" :data-speed-y="speedY">
       <div class="slider">
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
+        <span
+          class="heading"
+          v-for="n in 8"
+          :key="n"
+        >
+          {{ text }}
+        </span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+// import LuxyElFix from '~/assets/'
+
 export default {
+  // mixin: [LuxyElFix],
   props: {
     text: {
       type: String,
@@ -45,6 +47,7 @@ export default {
       const translateY = this.getComputedTranslateXY(this.$el)[1] || 0
       const top = this.$el.getBoundingClientRect().top + window.scrollY - translateY
       this.$el.style.transform = `translateY(${-top * (this.speedY / 50)}px)`
+      this.$el.style.marginTop = `${top * (this.speedY / 50)}px`
     },
     resizeHandler() {
       clearTimeout(this.resizeTimeout)
@@ -67,7 +70,8 @@ export default {
 
 <style lang="scss" scoped>
 .section-header {
-  color: rgba($cl-gray, 0.25);
+  color: var(--cl-gray);
+  opacity: 0.25;
   display: inline-flex;
   pointer-events: none;
   font-size: 22vw;

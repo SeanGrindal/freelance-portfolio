@@ -1,8 +1,19 @@
 // COLORS
-$cl-white: #FFF;
-$cl-black: #000;
-$cl-red: #FF4343;
-$cl-gray: #404040;
+html {
+  // COLORS
+  --cl-white: #FFF;
+  --cl-black: #0E0E11;
+  --cl-red: #FF5050;
+  --cl-gray: #404040;
+  --cl-light-gray: #f5f6fa;
+
+  &[data-theme='dark'] {
+    --cl-white: #0E0E11;
+    --cl-black: #FFF;
+    --cl-gray: #E3E3E3;
+    --cl-light-gray: #14151a;
+  }
+}
 
 // BREAKPOINTS
 $bk-min: 360px;

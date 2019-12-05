@@ -2,12 +2,12 @@
   <header class="Nav-Header">
     <nuxt-link class="logo" to="/">
       <span>S</span>
-      <span class="bold">G</span>
+      <span class="bold logo-g">G</span>
     </nuxt-link>
     <nav class="sz-small">
-      <a href="">About</a>
-      <a class="middle" href="">Work</a>
-      <a href="">Contact</a>
+      <nuxt-link to="/about">About</nuxt-link>
+      <nuxt-link to="/work">Work</nuxt-link>
+      <nuxt-link to="/contact">Contact</nuxt-link>
     </nav>
   </header>
 </template>
@@ -32,10 +32,14 @@ export default {
 
   .logo {
     font-size: 1.75rem;
+    letter-spacing: 0px;
+
+    .logo-g {
+      margin-left: -.25em;
+    }
   }
 
   a {
-    color: $cl-black;
     display: inline-block;
     padding: 1.1rem 1rem;
     mix-blend-mode: exclusion;

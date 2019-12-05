@@ -1,20 +1,25 @@
 <template lang="html">
   <div class="Contact-Reel">
-    <div class="Contact-Reel__contacts sz-small">
-      <a href="mailto:hello@seangrindal.dev" target="_blank">Email</a>
-      <a href="https://twitter.com/GrindalSean" target="_blank">Twitter</a>
-      <a href="https://github.com/SeanGrindal" target="_blank">Github</a>
-      <a href="https://www.linkedin.com/in/sean-grindal-b26b0918b/" target="_blank">LinkedIn</a>
-      <a href="mailto:hello@seangrindal.dev" target="_blank">Email</a>
-      <a href="https://twitter.com/GrindalSean" target="_blank">Twitter</a>
-      <a href="https://github.com/SeanGrindal" target="_blank">Github</a>
-      <a href="https://www.linkedin.com/in/sean-grindal-b26b0918b/" target="_blank">LinkedIn</a>
+    <div :class="['Contact-Reel__contacts', `sz-${size}`]">
+      <template v-for="n in 2">
+        <a href="mailto:hello@seangrindal.dev" target="_blank">Email</a>
+        <a href="https://twitter.com/GrindalSean" target="_blank">Twitter</a>
+        <a href="https://github.com/SeanGrindal" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/sean-grindal-b26b0918b/" target="_blank">LinkedIn</a>
+        <a href="https://medium.com/@sean37gl" target="_blank">Medium</a>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    size: {
+      type: String,
+      default: 'small'
+    }
+  }
 }
 </script>
 
@@ -26,7 +31,7 @@ export default {
   width: 100%;
 
   .Contact-Reel__contacts {
-    animation: horizontal-scroll 8s linear infinite;
+    animation: horizontal-scroll 6s linear infinite;
     display: inline-flex;
     will-change: transform;
 
@@ -41,7 +46,7 @@ export default {
 
       &:after {
         content: '';
-        background: $cl-black;
+        background: var(--cl-black);
         height: 2px;
         transition: width 360ms ease-in;
         position: absolute;

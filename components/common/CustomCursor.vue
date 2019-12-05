@@ -10,6 +10,7 @@ import Emitter from '~/assets/js/events'
 if (process.client) {
   var anime = require('animejs').default
 }
+
 export default {
   data() {
     return {
@@ -44,10 +45,14 @@ export default {
       }
     },
     getDefaultDiameter() {
+      if (this.isMobile) return
+
       this.defaultDiameter = getComputedStyle(this.$el).getPropertyValue('--diameter').replace(/\D/g, '') || 0
       this.diameter = this.defaultDiameter
     },
     setDiameter(diameter) {
+      if (this.isMobile) return
+
       this.diameter = diameter
 
       anime({
@@ -89,7 +94,7 @@ export default {
   --diameter: 60px;
 
   align-items: center;
-  border: solid 1px $cl-black;
+  border: solid 1px var(--cl-red);
   border-radius: 50%;
   box-sizing: border-box;
   pointer-events: none;
@@ -105,10 +110,5 @@ export default {
   width: var(--diameter);
   will-change: transform;
   z-index: 999;
-
-  @supports (mix-blend-mode: exclusion) {
-    border: solid 1px $cl-white;
-    mix-blend-mode: exclusion;
-  }
 }
 </style>

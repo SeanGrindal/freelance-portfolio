@@ -6,6 +6,11 @@
       "description": "Creatives landing is a digital experience developed for Motiv Studio to attract creative clients.",
       "card": {
         "src": "https://via.placeholder.com/900x1250.png/000/fff"
+      },
+      "pageContent": {
+        "siteLink": "https://creatives.motivstud.io/",
+        "date": "September 2019",
+        "workInfo": "Creatives landing is an interactive portfoli page built for Motiv Studio showcasing their creative projects and digital talent. I worked closely with the team at Motiv to bring this ditigal experience to fruition."
       }
     },
     {

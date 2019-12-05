@@ -3,36 +3,58 @@
     <nav-header />
     <main id="luxy" v-if="!isMobile">
       <nuxt />
+      <!-- <copy-footer /> -->
     </main>
     <nuxt v-else/>
 
     <custom-cursor ref="customCursor" v-if="!isMobile"/>
-    <reveal />
+    <slide-reveal />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Emitter from '~/assets/js/events'
+
 import NavHeader from '~/components/common/NavHeader.vue'
 import CustomCursor from '~/components/common/CustomCursor.vue'
-import Reveal from '~/components/common/Reveal.vue'
+import SlideReveal from '~/components/common/SlideReveal.vue'
+import CopyFooter from '~/components/common/CopyFooter.vue'
+
 
 if (process.client) {
-  require('intersection-observer')
-  var anime = require('animejs')
+  var luxy = require('luxy.js')
 }
 
 export default {
   components: {
     CustomCursor,
-    Reveal,
-    NavHeader
+    SlideReveal,
+    NavHeader,
+    CopyFooter
   },
+  data: () => ({
+    themeTimeout: null,
+  }),
   computed: {
-    ...mapGetters(['isMobile'])
+    ...mapGetters(['isMobile']),
+    ...mapGetters(['currentWorkPageNum'])
   },
   methods: {
     ...mapActions(['checkMobile']),
+    setTheme(theme) {
+      if (this.themeTimeout) {
+        clearTimeout(this.themeTimeout)
+        this.themeTimeout = null
+      }
+
+      document.documentElement.classList.add('theme-transition')
+      this.themeTimeout = window.setTimeout(() => {
+        document.documentElement.classList.remove('theme-transition')
+      }, 1000)
+
+      document.documentElement.setAttribute('data-theme', theme)
+    },
     tick() {
       requestAnimationFrame(() => {
         if (!this.isMobile) {
@@ -41,15 +63,28 @@ export default {
 
         this.tick()
       })
-    }
+    },
   },
   beforeMount() {
     this.checkMobile()
   },
   mounted() {
+    window.onbeforeunload = () => {
+      luxy.resetLuxy()
+      window.scrollTo(0, 0)
+    }
+
+    this._setTheme = this.setTheme
+    Emitter.on('SET_THEME', this._setTheme)
+
     this.tick()
 
+    Emitter.emit('APP_READY')
+
     console.log('%c @SeanGrindal', "font-weight: bold;")
+  },
+  beforeDestroy() {
+    Emitter.removeListener('SET_THEME', this._seTheme)
   }
 }
 </script>
@@ -66,21 +101,31 @@ html {
   overflow: scroll;
   overflow-x: hidden;
   min-width: $bk-min;
-}
 
-::selection {
-  background: $cl-black;
-  color: $cl-white;
-}
+  &.theme-transition {
+    transition: all 1000ms !important;
+    transition-delay: 0 !important;
+  }
 
-::-moz-selection {
-  background: $cl-black;
-  color: $cl-white;
-}
+  ::selection {
+    background: var(--cl-black);
+    color: var(--cl-white);
+  }
 
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  ::-moz-selection {
+    background: var(--cl-black);
+    color: var(--cl-white);
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  #layout, main {
+    background-color: var(--cl-white);
+    transition: background-color 1000ms;
+  }
 }
 
 .Default-Layout {
@@ -91,17 +136,17 @@ html {
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity 600ms ease-out;
 }
 .page-enter, .page-leave-to {
   opacity: 0;
 }
 
-#__nuxt, #__layout {
-  height: 100%;
+.Page {
+  z-index: 2;
 }
 
-#luxy {
-  background: $cl-white;
+#__nuxt, #__layout {
+  height: 100%;
 }
 </style>

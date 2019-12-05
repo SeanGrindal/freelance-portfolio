@@ -1,18 +1,46 @@
 <template lang="html">
-<nuxt-link class="Work-Item io-animate-in" :to="`/work/${page.id}`">
-  <div class="img-wrapper">
-    <img :src="page.card.src" :alt="page.pageName" draggable="false">
-  </div>
-  <p class="caption sz-small">{{ page.pageName }}</p>
-</nuxt-link>
+  <nuxt-link class="Work-Item" :to="`/work/${page.id}`">
+    <div class="img-wrapper" ref="imgWrapper">
+      <img :src="page.card.src" :alt="page.pageName" draggable="false">
+    </div>
+    <p class="caption sz-small">
+      <span class="bold index">0{{ number }}.</span>
+      <span>{{ page.pageName }}</span>
+    </p>
+  </nuxt-link>
 </template>
 
 <script>
+import ioMixin from '~/assets/js/ioMixin.js'
+if (process.client) {
+  var anime = require('animejs').default
+}
+
 export default {
+  mixins: [ioMixin],
   props: {
     page: {
       type: Object,
       required: true
+    },
+    number: {
+      required: true
+    }
+  },
+  methods: {
+    reveal() {
+      anime.timeline({
+        duration: 720,
+        easing: 'easeOutSine',
+      })
+      .add({
+        targets: this.$refs.imgWrapper,
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      })
+      .add({
+        targets: this.$el,
+        translateY: ['8vh', '0']
+      }, 0)
     }
   }
 }
@@ -20,12 +48,9 @@ export default {
 
 <style lang="scss" scoped>
 .Work-Item {
-  $translate: 6vh;
-
   display: block;
   padding: 20px 0;
-  transition: transform 720ms ease-out;
-  transform: translateY($translate);
+  transform: translateY(6vh);
   will-change: transform;
 
   &:hover img {
@@ -34,10 +59,7 @@ export default {
 
   .img-wrapper {
     overflow: hidden;
-    transition: clip-path 720ms ease-out;
     clip-path: polygon(0% 30%, 100% 30%, 100% 100%, 0% 100%);
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    will-change: clip-path;
   }
 
   img {
@@ -52,15 +74,10 @@ export default {
     @media(min-width: $bk-large) {
       padding: 0.75em 0;
     }
-  }
-}
 
-// Animation
-.Work-Item.intersected {
-  transform: translateY(0);
-
-  .img-wrapper {
-    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+    .index {
+      padding-right: .25em;
+    }
   }
 }
 </style>
