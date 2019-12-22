@@ -1,10 +1,9 @@
 <template lang="html">
-  <section class="Contact-Section">
+  <section class="Contact-Section" id="contact">
     <div class="content">
-      <p>I would love to work with you. Send me an inquiry!</p>
       <a href="mailto:hello@seangrindal.dev" class="bold email-me">
-        <div>hello@</div>
-        <div>seangrindal.dev</div>
+        <line-reveal class="two-lines" :lines="['hello@', 'seangrindal.dev']" />
+        <line-reveal class="one-line" :lines="['hello@seangrindal.dev']" />
       </a>
       <contact-reel />
     </div>
@@ -13,10 +12,12 @@
 
 <script>
 import ContactReel from '~/components/common/ContactReel.vue'
+import LineReveal from '~/components/common/LineReveal.vue'
 
 export default {
   components: {
-    ContactReel
+    ContactReel,
+    LineReveal
   }
 }
 </script>
@@ -26,15 +27,25 @@ export default {
   align-items: center;
   justify-content: center;
   display: flex;
-  min-height: 90vh;
+  min-height: 100vh;
   margin: 0 auto;
   margin-top: 16vh;
-  max-width: $bk-max;
   padding: 0 1rem;
+  width: 100%;
+
+  @media(min-width: $bk-medium) {
+    width: auto;
+  }
+
 
   .content {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
+    @media(min-width: $bk-medium) {
+      width: auto;
+    }
   }
 
   p, .Contact-Reel {
@@ -42,20 +53,37 @@ export default {
   }
 
   .Contact-Reel {
+    width: 100%;
+    max-width: none;
+
     @media(min-width: $bk-medium) {
       margin-left: auto;
+      max-width: 450px;
     }
   }
 
   .email-me {
     display: inline-block;
-    font-size: 10vw;
     margin-top: 2rem;
     margin-bottom: 2.5rem;
 
+    .one-line {
+      font-size: 7.9vw;
+      display: none;
+    }
+
+    .two-lines {
+      font-size: 10.5vw;
+    }
+
     @media(min-width: $bk-medium) {
-      display: flex;
-      font-size: 6vw;
+      .two-lines {
+        display: none;
+      }
+
+      .one-line {
+        display: block;
+      }
     }
   }
 }

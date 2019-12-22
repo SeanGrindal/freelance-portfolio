@@ -3,9 +3,11 @@
     <nav-header />
     <main id="luxy" v-if="!isMobile">
       <nuxt />
-      <!-- <copy-footer /> -->
     </main>
-    <nuxt v-else/>
+    <main>
+      <nuxt />
+    </main>
+
 
     <custom-cursor ref="customCursor" v-if="!isMobile"/>
     <slide-reveal />
@@ -70,8 +72,14 @@ export default {
   },
   mounted() {
     window.onbeforeunload = () => {
-      luxy.resetLuxy()
-      window.scrollTo(0, 0)
+      if (!this.isMobile) {
+        luxy.resetLuxy()
+        window.scrollTo(0, 0)
+      }
+    }
+
+    if (this.isMobile) {
+      document.querySelector('html').classList.add('isMobile')
     }
 
     this._setTheme = this.setTheme
@@ -122,7 +130,7 @@ html {
     background: transparent;
   }
 
-  #layout, main {
+  main {
     background-color: var(--cl-white);
     transition: background-color 1000ms;
   }

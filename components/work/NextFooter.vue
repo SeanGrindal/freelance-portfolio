@@ -3,12 +3,13 @@
   <nuxt-link class="next-link medium" :to="`/work/${nextProject.id}`">
     <line-reveal class="sz-heading" :lines="['Next Project']" />
   </nuxt-link>
-  <img :src="nextProject.card.src" alt="">
+  <img :src="nextProject.card.src" alt="Next project display image.">
 </div>
 </template>
 
 <script>
 import LineReveal from '~/components/common/LineReveal.vue'
+
 export default {
   components: {
     LineReveal
@@ -21,6 +22,7 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
 .Next-Footer {
   align-items: center;
@@ -29,19 +31,13 @@ export default {
   background-color: var(--cl-black);
   padding: 0 1rem;
   height: 70vh;
-  margin-top: 20vh;
   width: 100%;
+  overflow: hidden;
 }
 
 .next-link {
   color: var(--cl-white);
   z-index: 2;
-  mix-blend-mode: exclusion;
-
-  &:hover ~ img {
-    opacity: 1;
-    transition: opacity 360ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
 }
 
 img {
@@ -49,7 +45,18 @@ img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 360ms ease-out;
+  filter: blur(5px);
+}
+
+html:not(.isMobile) {
+  img {
+    opacity: 0;
+    transition: opacity 360ms ease-out;
+  }
+
+  .next-link:hover ~ img {
+    opacity: 1;
+    transition: opacity 360ms cubic-bezier(0.55, 0.055, 0.675, 0.28);
+  }
 }
 </style>

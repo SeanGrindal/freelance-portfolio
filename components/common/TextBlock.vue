@@ -16,9 +16,9 @@ export default {
     reveal() {
       anime({
         targets: this.$el,
-        duration: 1200,
+        duration: 1280,
         easing: 'easeOutQuint',
-        translateY: ['2em', '0em'],
+        translateY: ['3em', '0em'],
         opacity: ['0', '1']
       })
     }
@@ -29,6 +29,6 @@ export default {
 <style lang="scss" scoped>
 .Text-Block {
   opacity: 0;
-  transform: translateY(2em);
+  transform: translateY(3em);
 }
 </style>

@@ -1,5 +1,8 @@
 <template lang="html">
   <div :class="['Cursor', type]" ref="custom-cursor">
+    <transition>
+      <div class="text" v-if="text">{{ text }}</div>
+    </transition>
   </div>
 </template>
 
@@ -16,6 +19,7 @@ export default {
     return {
       x: null,
       y: null,
+      text: null,
       defaultDiameter: null,
       diameter: null,
       type: 'default'
@@ -38,9 +42,15 @@ export default {
       switch(this.type) {
         case 'default':
           this.setDiameter(this.defaultDiameter)
+          this.text = null
         break
         case 'enlarged':
           this.setDiameter(90)
+          this.text = null
+        break
+        case 'visit':
+          this.setDiameter(90)
+          this.text = 'visit'
         break
       }
     },
@@ -67,6 +77,14 @@ export default {
       if (this.isMobile) return
 
       this.$el.style.transform = `matrix(1, 0, 0, 1, ${this.x - this.diameter / 2}, ${this.y - this.diameter / 2})`
+
+      // anime({
+      //   targets: this.$el,
+      //   translateY: this.y - this.diameter / 2,
+      //   translateX: this.x - this.diameter / 2,
+      //   easing: 'easeOutSine',
+      //   duration: 120
+      // })
     }
   },
   mounted() {

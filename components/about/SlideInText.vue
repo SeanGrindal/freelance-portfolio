@@ -52,10 +52,11 @@ export default {
   font-size: 5.5vw;
   white-space: nowrap;
   visibility: hidden;
-  padding: 1.5vh 2rem;
+  padding: 1.5vh 1rem;
 
   @media(min-width: $bk-large) {
     font-size: 6vw;
+    padding: 1.5vh 2rem;
   }
 }
 </style>

@@ -4,7 +4,6 @@ if (process.client) {
 }
 
 export default {
-  scrollToTop: false,
   computed: {
     ...mapGetters(['isMobile'])
   },
@@ -12,9 +11,8 @@ export default {
     if (this.isMobile) return
 
     this.$nextTick(() => {
-
       window.scrollTo(0, 0)
-      luxy.init({ wrapperSpeed: 0.08 })
+      luxy.init({ wrapperSpeed: 0.1 })
     })
   },
   beforeDestroy() {

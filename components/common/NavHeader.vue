@@ -5,15 +5,47 @@
       <span class="bold logo-g">G</span>
     </nuxt-link>
     <nav class="sz-small">
-      <nuxt-link to="/about">About</nuxt-link>
-      <nuxt-link to="/work">Work</nuxt-link>
-      <nuxt-link to="/contact">Contact</nuxt-link>
+      <a href="/#landing">About</a>
+      <a href="/#work">Work</a>
+      <a href="/#contact">Contact</a>
     </nav>
   </header>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  // data: () => ({
+  //   links: null
+  // }),
+  // computed: {
+  //   ...mapGetters(['isMobile'])
+  // },
+  // methods: {
+  //   scrollToSection(e) {
+  //     e.preventDefault()
+  //     e.target.getAttribute('href').scrollIntoView({
+  //       behavior: 'smooth'
+  //     })
+  //   }
+  // },
+  // mounted() {
+  //   if (!this.isMobile) return
+  //
+  //   this.links = document.querySelectorAll('a[href^="#"]')
+  //
+  //   this.links.forEach(anchor => {
+  //     anchor.addEventListener('click', this.scrollToSection)
+  //   })
+  // },
+  // beforeDestroy() {
+  //   if (!this.isMobile) return
+  //
+  //   this.links.forEach(anchor => {
+  //     anchor.removeEventListener('click', this.scrollToSection)
+  //   })
+  // }
 }
 </script>
 
@@ -24,11 +56,21 @@ export default {
   left: 0;
   right: 0;
   max-width: $bk-max;
-  padding: 1em 0;
+  padding: .25em 0;
   display: flex;
   justify-content: space-between;
+  pointer-events: none;
   width: 100%;
   z-index: 100;
+
+  @media(min-width: $bk-large) {
+    padding: 1em 0;
+  }
+
+  @media(min-width: $bk-ultwd) {
+    padding: 4em 0;
+    max-width: $bk-ultwd;
+  }
 
   .logo {
     font-size: 1.75rem;
@@ -43,10 +85,11 @@ export default {
     display: inline-block;
     padding: 1.1rem 1rem;
     mix-blend-mode: exclusion;
+    pointer-events: all;
   }
 
   a:not(.logo) {
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .middle {

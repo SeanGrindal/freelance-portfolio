@@ -1,41 +1,55 @@
 <template lang="html">
   <div class="Work">
     <div class="Work__content">
+      <work-intro
+        :name="workPages[currentWorkPageNum].pageName"
+        :description="workPages[currentWorkPageNum].pageContent.info"
+        :link="workPages[currentWorkPageNum].pageContent.link"
+      />
 
-      {{ this.workPages[this.currentWorkPageNum].pageName }}
-
-      <work-row>
-        <work-img src="/images/creative-landing/creative-landing.jpg" />
+      <work-row
+        v-for="(src, i) in workPages[currentWorkPageNum].pageContent.imgsOne"
+        :key="`${i}-imgsOne`"
+      >
+        <work-img :src="src" />
       </work-row>
 
-      <work-row>
-        <work-img src="/images/creative-landing/creative-brand.jpg" />
-      </work-row>
-
-      <work-row>
-        <feature-showcase
+      <work-row v-if="workPages[currentWorkPageNum].pageContent.showcaseOne">
+        <info-showcase
           number="1"
-          :textLines="['I developed playful', 'animations and interactions', 'that bring the site to life.']"
+          :info="workPages[currentWorkPageNum].pageContent.showcaseOne"
         >
-          <work-img :src="this.workPages[this.currentWorkPageNum].card.src" />
-        </feature-showcase />
+          <work-img :src="workPages[currentWorkPageNum].pageContent.showcaseOne.src" />
+        </info-showcase />
       </work-row>
 
-      <work-row>
-        <work-img src="/images/creative-landing/creative-brand.jpg" />
+      <work-row
+        v-if="workPages[currentWorkPageNum].pageContent.imgsTwo"
+        v-for="(src, i) in workPages[currentWorkPageNum].pageContent.imgsTwo"
+        :key="`${i}-imgsTwo`"
+      >
+        <work-img :src="src" />
       </work-row>
 
-      <work-row>
-        <feature-showcase
+
+      <work-row v-if="workPages[currentWorkPageNum].pageContent.showcaseTwo">
+        <info-showcase
           class="reverse"
           number="2"
-          :textLines="['I developed playful', 'animations and interactions', 'that bring the site to life.']"
+          :info="workPages[currentWorkPageNum].pageContent.showcaseTwo"
         >
-          <work-img :src="this.workPages[this.currentWorkPageNum].card.src" />
-        </feature-showcase />
+          <work-img :src="workPages[currentWorkPageNum].pageContent.showcaseTwo.src" />
+        </info-showcase />
+      </work-row>
+
+      <work-row>
+        <work-details
+          :details="workPages[currentWorkPageNum].details"
+        />
       </work-row>
     </div>
-    <next-footer :nextProject="this.workPages[this.nextWorkPageNum]" />
+
+    <next-footer :nextProject="workPages[nextWorkPageNum]" />
   </div>
 </template>
 
@@ -45,20 +59,22 @@ import { mapGetters, mapState } from 'vuex'
 import LuxyMixin from '~/assets/js/LuxyMixin.js'
 import cursorMixin from '~/assets/js/cursorMixin.js'
 
-import ThemeChanger from '~/components/common/ThemeChanger.vue'
+import WorkIntro from '~/components/work/WorkIntro.vue'
 import WorkRow from '~/components/work/WorkRow.vue'
 import WorkImg from '~/components/work/WorkImg.vue'
-import FeatureShowcase from '~/components/work/FeatureShowcase.vue'
+import InfoShowcase from '~/components/work/InfoShowcase.vue'
+import WorkDetails from '~/components/work/WorkDetails.vue'
 import NextFooter from '~/components/work/NextFooter.vue'
 
 export default {
   mixins: [LuxyMixin, cursorMixin],
   components: {
-    ThemeChanger,
+    WorkIntro,
     WorkImg,
     NextFooter,
-    FeatureShowcase,
-    WorkRow
+    InfoShowcase,
+    WorkRow,
+    WorkDetails
   },
   head () {
     return {
@@ -76,6 +92,9 @@ export default {
     ...mapState(['workPages']),
     ...mapGetters(['currentWorkPageNum', 'nextWorkPageNum'])
   },
+  mounted() {
+
+  }
 }
 </script>
 

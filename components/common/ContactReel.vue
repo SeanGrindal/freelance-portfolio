@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="Contact-Reel">
     <div :class="['Contact-Reel__contacts', `sz-${size}`]">
-      <template v-for="n in 2">
+      <template v-for="n in 4">
         <a href="mailto:hello@seangrindal.dev" target="_blank">Email</a>
         <a href="https://twitter.com/GrindalSean" target="_blank">Twitter</a>
         <a href="https://github.com/SeanGrindal" target="_blank">Github</a>
@@ -31,7 +31,7 @@ export default {
   width: 100%;
 
   .Contact-Reel__contacts {
-    animation: horizontal-scroll 6s linear infinite;
+    animation: horizontal-scroll 12s linear infinite;
     display: inline-flex;
     will-change: transform;
 
@@ -47,7 +47,7 @@ export default {
       &:after {
         content: '';
         background: var(--cl-black);
-        height: 2px;
+        height: 1px;
         transition: width 360ms ease-in;
         position: absolute;
         bottom: 2px;

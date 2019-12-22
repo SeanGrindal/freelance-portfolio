@@ -1,7 +1,7 @@
 <template lang="html">
   <nuxt-link class="Work-Item" :to="`/work/${page.id}`">
     <div class="img-wrapper" ref="imgWrapper">
-      <img :src="page.card.src" :alt="page.pageName" draggable="false">
+      <img :src="page.card.src" :alt="page.pageName" />
     </div>
     <p class="caption sz-small">
       <span class="bold index">0{{ number }}.</span>
@@ -12,12 +12,18 @@
 
 <script>
 import ioMixin from '~/assets/js/ioMixin.js'
+// import LazyImg from '~/components/common/LazyImg.vue'
+import { mapGetters } from 'vuex'
+
 if (process.client) {
   var anime = require('animejs').default
 }
 
 export default {
   mixins: [ioMixin],
+  components: {
+    // LazyImg
+  },
   props: {
     page: {
       type: Object,
@@ -27,19 +33,27 @@ export default {
       required: true
     }
   },
+  computed: {
+    ...mapGetters(['isMobile'])
+  },
   methods: {
     reveal() {
-      anime.timeline({
-        duration: 720,
+      if (this.isMobile) return
+
+      const timeline = anime.timeline({
         easing: 'easeOutSine',
       })
-      .add({
+
+      timeline.add({
+        duration: 1280,
         targets: this.$refs.imgWrapper,
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        clipPath: 'polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%)',
       })
-      .add({
+
+      timeline.add({
+        duration: 920,
         targets: this.$el,
-        translateY: ['8vh', '0']
+        translateY: ['6vh', '0']
       }, 0)
     }
   }
@@ -50,25 +64,18 @@ export default {
 .Work-Item {
   display: block;
   padding: 20px 0;
-  transform: translateY(6vh);
-  will-change: transform;
-
-  &:hover img {
-    transform: scale(1.1);
-  }
 
   .img-wrapper {
-    overflow: hidden;
-    clip-path: polygon(0% 30%, 100% 30%, 100% 100%, 0% 100%);
+    box-shadow: 3px 3px 20px 6px rgba(#000, 0.15);
   }
 
   img {
     display: block;
-    transition: transform 540ms ease-out;
     width: 100%;
   }
 
   .caption {
+    margin-top: 0.25em;
     padding: 1em;
 
     @media(min-width: $bk-large) {
@@ -77,6 +84,28 @@ export default {
 
     .index {
       padding-right: .25em;
+    }
+  }
+}
+
+html:not(.isMobile) {
+  .Work-Item {
+    transform: translateY(6vh);
+    will-change: transform;
+
+    .img-wrapper {
+      overflow: hidden;
+      -webkit-clip-path: polygon(0% 30%, 110% 30%, 110% 110%, 0% 110%);
+      clip-path: polygon(0% 30%, 110% 30%, 110% 110%, 0% 110%);
+    }
+
+    img {
+      border-radius: 1px;
+      transition: transform 720ms cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 }

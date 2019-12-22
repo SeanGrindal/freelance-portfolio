@@ -55,11 +55,11 @@ export default {
     font-size: 4.5vw;
 
     @media(min-width: $bk-medium) {
-      font-size: 4vw;
+      font-size: 3.75vw;
     }
 
     @media(min-width: $bk-large) {
-      font-size: 3vw;
+      font-size: 2.75vw;
     }
 
     @media(min-width: $bk-max) {
@@ -68,7 +68,7 @@ export default {
   }
 
   &.reveal--heading {
-    font-size: 9vw;
+    font-size: 11vw;
 
     @media(min-width: $bk-medium) {
       font-size: 8vw;
@@ -79,7 +79,7 @@ export default {
     }
 
     @media(min-width: $bk-max) {
-      font-size: 5.5rem;
+      font-size: 5.25rem;
     }
   }
 

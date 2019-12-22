@@ -1,5 +1,5 @@
 <template lang="html">
-  <section class="Work-Grid">
+  <section class="Work-Grid" id="work">
     <div class="Work-Grid__wrapper">
       <work-item
         v-for="(page, i) in workPages"
@@ -30,6 +30,10 @@ export default {
 .Work-Grid {
   max-width: $bk-max;
   margin: 0 auto;
+
+  @media(min-width: $bk-medium) {
+    padding: 0 1rem;
+  }
 
   .Work-Item {
     width: 100%;

@@ -1,5 +1,5 @@
 <template lang="html">
-  <section class="Landing">
+  <section class="Landing" id="landing">
     <slide-in-text side="right">
       Hi! My name's Sean Grindal.
     </slide-in-text>
@@ -79,12 +79,6 @@ export default {
 <style lang="scss" scoped>
 .Landing {
   padding-top: 30vh;
-
-  // align-items: center;
-  // display: flex;
-  // min-height: 92vh;
-  // padding: 0 1rem;
-  // margin: 0 auto;
-  // max-width: $bk-max;
+  min-height: 100vh;
 }
 </style>

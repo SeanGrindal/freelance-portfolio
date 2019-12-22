@@ -1,4 +1,10 @@
-html {  touch-action: manipulation; }
+html {
+  touch-action: manipulation;
+
+  &.isMobile {
+    scroll-behavior: smooth;
+  }
+}
 
 *,
 *:after,

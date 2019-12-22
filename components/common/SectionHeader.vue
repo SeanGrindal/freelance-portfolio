@@ -15,10 +15,9 @@
 </template>
 
 <script>
-// import LuxyElFix from '~/assets/'
+import { mapGetters} from 'vuex'
 
 export default {
-  // mixin: [LuxyElFix],
   props: {
     text: {
       type: String,
@@ -30,8 +29,13 @@ export default {
       speedY: 15
     }
   },
+  computed: {
+    ...mapGetters(['isMobile'])
+  },
   methods: {
     getComputedTranslateXY(obj) {
+      if (this.isMobile) return
+
       if(!window.getComputedStyle) return
     	const transArr = []
       const style = getComputedStyle(obj), transform = style.transform || style.webkitTransform || style.mozTransform
@@ -44,12 +48,16 @@ export default {
       return transArr
     },
     setOffset() {
+      if (this.isMobile) return
+
       const translateY = this.getComputedTranslateXY(this.$el)[1] || 0
       const top = this.$el.getBoundingClientRect().top + window.scrollY - translateY
       this.$el.style.transform = `translateY(${-top * (this.speedY / 50)}px)`
       this.$el.style.marginTop = `${top * (this.speedY / 50)}px`
     },
     resizeHandler() {
+      if (this.isMobile) return
+
       clearTimeout(this.resizeTimeout)
       this.resizeTimeout = setTimeout(() => {
         this.setOffset()
@@ -57,6 +65,8 @@ export default {
     }
   },
   mounted() {
+    if (this.isMobile) return
+
     this.setOffset()
 
     this._resizeHandler = this.resizeHandler.bind(this)

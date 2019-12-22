@@ -1,17 +1,25 @@
 <template lang="html">
   <div class="Work-Img">
     <div class="background">
-      <img class="img" :src="src" />
+      <lazy-img class="img" :src="src" :alt="alt" draggable="false" />
     </div>
   </div>
 </template>
 
 <script>
+import LazyImg from '~/components/common/LazyImg.vue'
+
 export default {
+  components: {
+    LazyImg
+  },
   props: {
     src: {
       type: String,
       required: true
+    },
+    alt: {
+      type: String
     }
   }
 }
