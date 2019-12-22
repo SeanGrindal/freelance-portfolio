@@ -42,6 +42,8 @@ export default {
           translateY: ['100%', '0%'],
         })
       }
+
+      this.unobserveIO()
     }
   }
 }
@@ -52,7 +54,7 @@ export default {
   font-size: inherit;
 
   &.reveal--subheading {
-    font-size: 4.5vw;
+    font-size: 5.5vw;
 
     @media(min-width: $bk-medium) {
       font-size: 3.75vw;

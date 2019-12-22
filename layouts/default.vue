@@ -4,12 +4,14 @@
     <main id="luxy" v-if="!isMobile">
       <nuxt />
     </main>
-    <main>
+    <main v-else>
       <nuxt />
     </main>
 
 
     <custom-cursor ref="customCursor" v-if="!isMobile"/>
+    <div v-else></div>
+
     <slide-reveal />
   </div>
 </template>
@@ -44,7 +46,7 @@ export default {
   },
   methods: {
     ...mapActions(['checkMobile']),
-    setTheme(theme) {
+    setTheme(theme) {      
       if (this.themeTimeout) {
         clearTimeout(this.themeTimeout)
         this.themeTimeout = null
@@ -74,8 +76,9 @@ export default {
     window.onbeforeunload = () => {
       if (!this.isMobile) {
         luxy.resetLuxy()
-        window.scrollTo(0, 0)
       }
+
+      window.scrollTo(0, 0)
     }
 
     if (this.isMobile) {
@@ -89,7 +92,7 @@ export default {
 
     Emitter.emit('APP_READY')
 
-    console.log('%c @SeanGrindal', "font-weight: bold;")
+    console.log('%cDeveloped and designed by @SeanGrindal', "font-weight: bold; color: #FF5050;")
   },
   beforeDestroy() {
     Emitter.removeListener('SET_THEME', this._seTheme)

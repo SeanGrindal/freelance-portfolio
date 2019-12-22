@@ -24,8 +24,10 @@ export default {
         targets: this.$el,
         duration: 1280,
         easing: 'easeOutQuint',
-        translateY: ['6rem', '0rem'],
+        translateY: ['12vmin', '0vmin'],
       })
+
+      this.unobserveIO()
     }
   }
 }
@@ -36,6 +38,6 @@ export default {
   max-width: $bk-max;
   margin: 6vh auto;
   padding: 0 1em;
-  transform: translateY(6rem);
+  transform: translateY(12vmin);
 }
 </style>

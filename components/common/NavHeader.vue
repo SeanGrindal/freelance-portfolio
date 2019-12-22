@@ -4,7 +4,7 @@
       <span>S</span>
       <span class="bold logo-g">G</span>
     </nuxt-link>
-    <nav class="sz-small">
+    <nav class="sz-small" v-if="isHome">
       <a href="/#landing">About</a>
       <a href="/#work">Work</a>
       <a href="/#contact">Contact</a>
@@ -16,36 +16,40 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  // data: () => ({
-  //   links: null
-  // }),
-  // computed: {
-  //   ...mapGetters(['isMobile'])
-  // },
-  // methods: {
-  //   scrollToSection(e) {
-  //     e.preventDefault()
-  //     e.target.getAttribute('href').scrollIntoView({
-  //       behavior: 'smooth'
-  //     })
-  //   }
-  // },
-  // mounted() {
-  //   if (!this.isMobile) return
-  //
-  //   this.links = document.querySelectorAll('a[href^="#"]')
-  //
-  //   this.links.forEach(anchor => {
-  //     anchor.addEventListener('click', this.scrollToSection)
-  //   })
-  // },
-  // beforeDestroy() {
-  //   if (!this.isMobile) return
-  //
-  //   this.links.forEach(anchor => {
-  //     anchor.removeEventListener('click', this.scrollToSection)
-  //   })
-  // }
+  data: () => ({
+    links: null
+  }),
+  computed: {
+    ...mapGetters(['isMobile', 'currentWorkPageNum']),
+    isHome() {
+      if (this.currentWorkPageNum == -1) return true
+      else return false
+    }
+  },
+  methods: {
+    scrollToSection(e) {
+      e.preventDefault()
+      e.target.getAttribute('href').scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
+  },
+  mounted() {
+    if (!this.isMobile) return
+
+    this.links = document.querySelectorAll('a[href^="#"]')
+
+    this.links.forEach(anchor => {
+      anchor.addEventListener('click', this.scrollToSection)
+    })
+  },
+  beforeDestroy() {
+    if (!this.isMobile) return
+
+    this.links.forEach(anchor => {
+      anchor.removeEventListener('click', this.scrollToSection)
+    })
+  }
 }
 </script>
 

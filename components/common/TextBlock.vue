@@ -21,6 +21,8 @@ export default {
         translateY: ['3em', '0em'],
         opacity: ['0', '1']
       })
+
+      this.unobserveIO()
     }
   }
 }

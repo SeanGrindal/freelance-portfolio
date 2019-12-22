@@ -6,6 +6,7 @@
 import ioMixin from '~/assets/js/ioMixin.js'
 
 import Emitter from '~/assets/js/events'
+// import { mapGetters } from 'vuex'
 
 export default {
   mixins: [ioMixin],
@@ -15,6 +16,9 @@ export default {
       threshold: 0
     }
   }),
+  // computed: {
+  //   ...mapGetters(['isMobile'])
+  // },
   methods: {
     reveal() {
       Emitter.emit('SET_THEME', 'light')

@@ -28,6 +28,8 @@ export default {
     reveal() {
       this.$el.addEventListener('load', this.onLoad)
       this.$el.setAttribute('src', this.src)
+
+      this.unobserveIO()
     }
   }
 }
@@ -36,7 +38,7 @@ export default {
 <style lang="scss">
 .Lazy-Img {
   opacity: 0;
-  transition: opacity 240ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 360ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
   &.loaded {
     opacity: 1;

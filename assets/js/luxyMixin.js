@@ -4,6 +4,7 @@ if (process.client) {
 }
 
 export default {
+  scrollToTop: false,
   computed: {
     ...mapGetters(['isMobile'])
   },

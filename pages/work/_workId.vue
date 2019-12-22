@@ -92,8 +92,8 @@ export default {
     ...mapState(['workPages']),
     ...mapGetters(['currentWorkPageNum', 'nextWorkPageNum'])
   },
-  mounted() {
-
+  beforeMount() {
+    window.scrollTo(0, 0)
   }
 }
 </script>

@@ -1,9 +1,5 @@
 html {
   touch-action: manipulation;
-
-  &.isMobile {
-    scroll-behavior: smooth;
-  }
 }
 
 *,

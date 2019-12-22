@@ -89,8 +89,12 @@ export default {
     }
   }
 
-  .number, .info-heading, .description, .info {
+  .number, .info-heading {
     margin-bottom: 0.75em;
+  }
+
+  .description, .info {
+    margin-bottom: 1.25em;
   }
 
   .description {

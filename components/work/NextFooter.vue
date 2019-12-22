@@ -48,6 +48,12 @@ img {
   filter: blur(5px);
 }
 
+html.isMobile {
+  .Next-Footer .next-link {
+    mix-blend-mode: exclusion;
+  }
+}
+
 html:not(.isMobile) {
   img {
     opacity: 0;
@@ -57,6 +63,12 @@ html:not(.isMobile) {
   .next-link:hover ~ img {
     opacity: 1;
     transition: opacity 360ms cubic-bezier(0.55, 0.055, 0.675, 0.28);
+  }
+}
+
+.isMobile {
+  .Next-Footer {
+    background: none;
   }
 }
 </style>

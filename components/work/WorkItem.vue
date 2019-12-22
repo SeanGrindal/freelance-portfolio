@@ -55,6 +55,8 @@ export default {
         targets: this.$el,
         translateY: ['6vh', '0']
       }, 0)
+
+      this.unobserveIO()
     }
   }
 }
@@ -66,6 +68,8 @@ export default {
   padding: 20px 0;
 
   .img-wrapper {
+    padding: 10%;
+    background: var(--cl-light-gray);
     box-shadow: 3px 3px 20px 6px rgba(#000, 0.15);
   }
 
@@ -104,7 +108,7 @@ html:not(.isMobile) {
       transition: transform 720ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &:hover {
-        transform: scale(1.02);
+        transform: scale(1.05);
       }
     }
   }

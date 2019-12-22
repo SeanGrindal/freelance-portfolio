@@ -36,6 +36,12 @@ export default {
           }
         }
       })
+    },
+    unobserveIO() {
+      if (!this.io) return
+
+      this.io.unobserve(this.$el)
+      this.io = null
     }
   },
   mounted() {
@@ -46,10 +52,7 @@ export default {
     }
   },
   beforeDestroy() {
-    if (this.io) {
-      this.io.unobserve(this.$el)
-      this.io = null
-    }
+    this.unobserveIO()
   }
 }
 

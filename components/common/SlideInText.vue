@@ -42,6 +42,8 @@ export default {
           rotate: [0, -1]
         })
       }
+
+      this.unobserveIO()
     }
   }
 }

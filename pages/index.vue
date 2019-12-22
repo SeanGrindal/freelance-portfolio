@@ -26,6 +26,9 @@ export default {
     SectionHeader,
     ContactSection,
     ThemeChanger
+  },
+  beforeMount() {
+    window.scrollTo(0, 0)
   }
 }
 </script>

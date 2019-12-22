@@ -42,7 +42,7 @@
 import { mapGetters } from 'vuex'
 import LineReveal from '~/components/common/LineReveal.vue'
 import ThemeChanger from '~/components/common/ThemeChanger.vue'
-import SlideInText from '~/components/about/SlideInText'
+import SlideInText from '~/components/common/SlideInText'
 
 import Emitter from '~/assets/js/events'
 
