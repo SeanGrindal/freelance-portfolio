@@ -1,7 +1,13 @@
 <template lang="html">
   <nuxt-link class="Work-Item" :to="`/work/${page.id}`">
     <div class="img-wrapper" ref="imgWrapper">
-      <img :src="page.card.src" :alt="page.pageName" />
+      <work-img
+        :imgData="{
+          src: page.card.src,
+          alt: page.pageName
+        }"
+        :class="page.card.imgType"
+      />
     </div>
     <p class="caption sz-small">
       <span class="bold index">0{{ number }}.</span>
@@ -12,7 +18,7 @@
 
 <script>
 import ioMixin from '~/assets/js/ioMixin.js'
-// import LazyImg from '~/components/common/LazyImg.vue'
+import WorkImg from '~/components/work/WorkImg.vue'
 import { mapGetters } from 'vuex'
 
 if (process.client) {
@@ -22,7 +28,7 @@ if (process.client) {
 export default {
   mixins: [ioMixin],
   components: {
-    // LazyImg
+    WorkImg
   },
   props: {
     page: {
@@ -62,15 +68,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .Work-Item {
   display: block;
   padding: 20px 0;
 
   .img-wrapper {
-    padding: 10%;
-    background: var(--cl-light-gray);
-    box-shadow: 3px 3px 20px 6px rgba(#000, 0.15);
+    box-shadow: 3px 3px 16px 4px rgba(#000, 0.1);
   }
 
   img {

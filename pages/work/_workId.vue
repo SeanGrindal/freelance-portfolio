@@ -8,44 +8,36 @@
       />
 
       <work-row
-        v-for="(src, i) in workPages[currentWorkPageNum].pageContent.imgsOne"
-        :key="`${i}-imgsOne`"
+        v-for="(row, i) in workPages[currentWorkPageNum].pageContent.rows"
+        :key="`${i}`"
       >
-        <work-img :src="src" />
-      </work-row>
+        <work-img
+          v-if="row.type == 'img'"
+          :imgData="row.imgData"
+          :class="row.imgData.imgType"
+        />
 
-      <work-row v-if="workPages[currentWorkPageNum].pageContent.showcaseOne">
-        <info-showcase
-          number="1"
-          :info="workPages[currentWorkPageNum].pageContent.showcaseOne"
+        <work-double-img
+          v-else-if="row.type == 'doubleImg'"
+          :imgs="row.imgs"
+        />
+
+        <work-info
+          v-else-if="row.type == 'info'"
+          :class="row.direction"
+          :text="row.text"
+          :heading="row.heading"
         >
-          <work-img :src="workPages[currentWorkPageNum].pageContent.showcaseOne.src" />
-        </info-showcase />
-      </work-row>
+          <work-img
+            :imgData="row.img"
+            :class="row.img.imgType"
+          />
+        </work-info>
 
-      <work-row
-        v-if="workPages[currentWorkPageNum].pageContent.imgsTwo"
-        v-for="(src, i) in workPages[currentWorkPageNum].pageContent.imgsTwo"
-        :key="`${i}-imgsTwo`"
-      >
-        <work-img :src="src" />
-      </work-row>
-
-
-      <work-row v-if="workPages[currentWorkPageNum].pageContent.showcaseTwo">
-        <info-showcase
-          class="reverse"
-          number="2"
-          :info="workPages[currentWorkPageNum].pageContent.showcaseTwo"
-        >
-          <work-img :src="workPages[currentWorkPageNum].pageContent.showcaseTwo.src" />
-        </info-showcase />
       </work-row>
 
       <work-row>
-        <work-details
-          :details="workPages[currentWorkPageNum].details"
-        />
+        <work-details :details="workPages[currentWorkPageNum].details"/>
       </work-row>
     </div>
 
@@ -62,7 +54,8 @@ import cursorMixin from '~/assets/js/cursorMixin.js'
 import WorkIntro from '~/components/work/WorkIntro.vue'
 import WorkRow from '~/components/work/WorkRow.vue'
 import WorkImg from '~/components/work/WorkImg.vue'
-import InfoShowcase from '~/components/work/InfoShowcase.vue'
+import WorkDoubleImg from '~/components/work/WorkDoubleImg.vue'
+import WorkInfo from '~/components/work/WorkInfo.vue'
 import WorkDetails from '~/components/work/WorkDetails.vue'
 import NextFooter from '~/components/work/NextFooter.vue'
 
@@ -71,10 +64,11 @@ export default {
   components: {
     WorkIntro,
     WorkImg,
-    NextFooter,
-    InfoShowcase,
+    WorkDoubleImg,
+    WorkInfo,
     WorkRow,
-    WorkDetails
+    WorkDetails,
+    NextFooter
   },
   head () {
     return {
@@ -88,7 +82,7 @@ export default {
       ]
     }
   },
-  computed:{
+  computed: {
     ...mapState(['workPages']),
     ...mapGetters(['currentWorkPageNum', 'nextWorkPageNum'])
   },

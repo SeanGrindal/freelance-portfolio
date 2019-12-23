@@ -1,26 +1,25 @@
 <template lang="html">
-<div class="Feature-Showcase">
+<div class="Work-Info">
   <div class="content">
     <div class="text-wrapper">
-      <!-- <line-reveal
-        class="cl-gray sz-small number"
-        :lines="[`0${number}.`]"
-      /> -->
-      <template v-if="info.type == 'lines'">
+
+      <template v-if="type == 'lines'">
         <line-reveal
           class="description cl-gray medium reveal--subheading"
-          :lines="info.textLines"
+          :lines="text"
         />
       </template>
-      <template v-else-if="info.type == 'text'">
+
+      <template v-else-if="type == 'text'">
         <line-reveal
           class="cl-gray info-heading medium reveal--subheading"
-          :lines="[info.heading]"
+          :lines="[heading]"
         />
         <text-block class="info">
-          {{ info.text }}
+          {{ text }}
         </text-block>
       </template>
+
     </div>
     <div class="feature-wrapper">
       <slot />
@@ -39,20 +38,44 @@ export default {
     LineReveal
   },
   props: {
-    info: {
-      required: true
+    heading: {
+      type: String
     },
-    number: {
-      type: [Number, String],
+    text: {
       required: true
+    }
+  },
+  computed: {
+    type() {
+      if (Array.isArray(this.text)) return 'lines'
+      else return 'text'
     }
   }
 }
 </script>
 
 <style lang="scss">
-.Feature-Showcase {
+.Work-Info {
   width: 100%;
+
+  @media(min-width: $bk-large) {
+    .content {
+      .text-wrapper {
+        padding-right: 2.5rem;
+
+        @media(min-width: $bk-max) {
+          padding-right: 3vh;
+        }
+      }
+
+
+      .feature-wrapper {
+        @media(min-width: $bk-max) {
+          padding-left: 3vh;
+        }
+      }
+    }
+  }
 
   @media(min-width: $bk-large) {
     &.reverse .content {
@@ -60,9 +83,19 @@ export default {
 
       .text-wrapper {
         padding-left: 2.5rem;
+        padding-right: 0;
 
         @media(min-width: $bk-max) {
-          padding-left: 5rem;
+          padding-left: 4vh;
+          padding-right: 0;
+        }
+      }
+
+
+      .feature-wrapper {
+        @media(min-width: $bk-max) {
+          padding-right: 3vh;
+          padding-left: 0;
         }
       }
     }
@@ -80,11 +113,6 @@ export default {
         justify-content: center;
         flex-direction: column;
         display: flex;
-        padding-right: 2.5rem;
-
-        @media(min-width: $bk-max) {
-          padding-right: 5rem;
-        }
       }
     }
   }
@@ -95,6 +123,10 @@ export default {
 
   .description, .info {
     margin-bottom: 1.25em;
+  }
+
+  .info {
+    max-width: 600px;
   }
 
   .description {

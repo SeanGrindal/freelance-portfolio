@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     ...mapActions(['checkMobile']),
-    setTheme(theme) {      
+    setTheme(theme) {
       if (this.themeTimeout) {
         clearTimeout(this.themeTimeout)
         this.themeTimeout = null
@@ -93,6 +93,7 @@ export default {
     Emitter.emit('APP_READY')
 
     console.log('%cDeveloped and designed by @SeanGrindal', "font-weight: bold; color: #FF5050;")
+    console.log("%cI am also willing to take a full-time developer position so shoot me an email at hello@seangrindal.dev if you have an open position.", "font-weight: bold;")
   },
   beforeDestroy() {
     Emitter.removeListener('SET_THEME', this._seTheme)

@@ -1,7 +1,20 @@
 <template lang="html">
   <div class="Work-Img">
     <div class="background">
-      <lazy-img class="img" :src="src" :alt="alt" draggable="false" />
+      <lazy-img
+        v-if="isLazy"
+        class="img"
+        :src="imgData.src"
+        :alt="imgData.alt"
+        draggable="false"
+      />
+      <img
+        v-else
+        class="img"
+        :src="imgData.src"
+        :alt="imgData.alt"
+        draggable="false"
+      />
     </div>
   </div>
 </template>
@@ -14,12 +27,12 @@ export default {
     LazyImg
   },
   props: {
-    src: {
-      type: String,
-      required: true
+    imgData: {
+      required: true,
     },
-    alt: {
-      type: String
+    isLazy: {
+      default: true,
+      type: Boolean
     }
   }
 }
@@ -28,6 +41,14 @@ export default {
 <style lang="scss" scoped>
 .Work-Img {
   width: 100%;
+
+  &.mobile .background {
+    padding: 12% 24%;
+  }
+
+  &.tablet .background {
+    padding: 12% 18%;
+  }
 
   .background {
     background-color: var(--cl-light-gray);

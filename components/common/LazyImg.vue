@@ -1,5 +1,8 @@
 <template lang="html">
-  <img :class="['Lazy-Img', { 'loaded': isLoaded }]" draggable="false" />
+  <img
+    :class="['Lazy-Img', { 'loaded': isLoaded }]"
+    draggable="false"
+  />
 </template>
 
 <script>

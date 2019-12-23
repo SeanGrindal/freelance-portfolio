@@ -5,35 +5,71 @@
       "pageName": "Creatives Landing",
       "description": "Creatives landing is a digital experience developed for Motiv Studio to attract creative clients.",
       "card": {
-        "src": "/images/creative-landing/card.jpg"
+        "src": "/images/creative-landing/brand-tablet.jpg"
       },
       "details": {
         "technology": ["ES6", "SCSS", "Pug", "Node.js"],
         "misc": ["Lead Frontend Dev", "Oct 2019"],
-        "projectType": ["Landing Page", "App Home", "Interactive Experience"]
+        "projectType": ["Portfolio", "Creative", "Digital Experience"]
       },
       "pageContent": {
         "link": "https://creatives.motivstud.io/",
-        "date": "September 2019",
         "info": "Lead frontend developer for Creatives landing, an interactive portfoli page built for Motiv Studio showcasing their creative projects and digital talent.",
-        "imgsOne": [
-          "/images/creative-landing/creative-landing.jpg",
-          "/images/creative-landing/creative-brand.jpg"
-        ],
-        "showcaseOne": {
-          "type": "lines",
-          "src": "https://via.placeholder.com/900x1250.png/000/fff",
-          "textLines": ["I developed playful", "animations and interactions", "that bring the site to life."]
-        },
-        "imgsTwo": [
-          "/images/creative-landing/creative-brand.jpg"
-        ],
-        "showcaseTwo": {
-          "type": "text",
-          "src": "https://via.placeholder.com/900x1250.png/000/fff",
-          "heading": "What I did",
-          "text": "this is extra information that the client would need to know about that I should put on the site."
-        }
+        "rows": [
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/creative-landing/landing-desktop.jpg",
+              "alt": "desktop screenshot of website",
+              "imgType": "desktop"
+            }
+          },
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/creative-landing/brand-desktop.jpg",
+              "alt": "desktop screenshot of website",
+              "imgType": "desktop"
+            }
+          },
+          {
+            "type": "info",
+            "img": {
+              "src": "/images/creative-landing/landing-mobile.jpg",
+              "alt": "tablet website screenshot",
+              "imgType": "mobile"
+            },
+            "direction": "normal",
+            "heading": "My Role",
+            "text": "For this project I was tasked with developing the enterity of the frontend experience. I designed and built out the architecture of the website from scratch, planning accordingly for the neccessary features to make this project shine: unique animations, slide-based scroll, and its variouse interactions."
+          },
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/creative-landing/contact-desktop.jpg",
+              "alt": "desktop screenshot of website",
+              "imgType": "desktop"
+            }
+          },
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/creative-landing/approach-desktop.jpg",
+              "alt": "desktop screenshot of website",
+              "imgType": "desktop"
+            }
+          },
+          {
+            "type": "info",
+            "img": {
+              "src": "/images/creative-landing/whatwedo-tablet.jpg",
+              "alt": "tablet website screenshot",
+              "imgType": "tablet"
+            },
+            "direction": "reverse",
+            "text": ["Playful scroll-based", "slides and their animations", "bring the site to life."]
+          }
+        ]
       }
     },
     {
@@ -41,34 +77,37 @@
       "pageName": "Ricochet Landing",
       "description": "Ricochet landing was developed for Motiv Studio for a digital data analyses project called Ricochet.",
       "card": {
-        "src": "/images/ricochet-landing/tablet.jpg"
+        "src": "/images/ricochet-landing/whatwedo-tablet.jpg"
       },
       "details": {
         "technology": ["ES6", "SCSS", "Pug", "Node.js"],
-        "misc": ["Lead Frontend Dev", "Oct 2019"],
+        "misc": ["Lead Frontend Dev", "Sept 2019"],
         "projectType": ["Landing Page", "App Home", "Interactive Experience"]
       },
       "pageContent": {
         "link": "https://ricochet.motivstud.io/",
-        "date": "September 2019",
-        "info": "Ricochet landing is landing page I built for a startup app that helps businesses track important metrics. The site is full of animation and interactions that keep potential users engaged while learning about the application.",
-        "imgsOne": [
-          "/images/ricochet-landing/fullcapture.jpg"
-        ],
-        "showcaseOne": {
-          "type": "lines",
-          "src": "/images/ricochet-landing/tablet.jpg",
-          "textLines": ["I developed playful", "animations and interactions", "that bring the site to life."]
-        },
-        "imgsTwo": [
-          "/images/creative-landing/creative-brand.jpg"
-        ],
-        "showcaseTwo": {
-          "type": "text",
-          "src": "/images/ricochet-landing/tablet2.jpg",
-          "heading": "My Role",
-          "text": "For this project I was tasked with developing the enterity of the frontend experience. I designed and built out the architecture of the website from scratch, planning accordingly for the neccessary features to make this project shine: responsivness, unique animation, and it's variouse interactions."
-        }
+        "info": "Ricochet landing is landing page I built for a startup app that helps businesses track important interacting metrics. The site is full of animation and interactions that keep potential users engaged while learning about the application.",
+        "rows": [
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/ricochet-landing/fullcapture.jpg",
+              "alt": "desktop screenshot of full Ricochet website",
+              "imgType": "desktop"
+            }
+          },
+          {
+            "type": "info",
+            "img": {
+              "src": "/images/ricochet-landing/platform-mobile.jpg",
+              "alt": "responsive mobile website screenshot",
+              "imgType": "mobile"
+            },
+            "direction": "normal",
+            "heading": "My Role",
+            "text": "For this project I was tasked with developing the enterity of the frontend experience once again. I designed and built out the architecture of the website from scratch, planning accordingly for the neccessary features to make this project shine: unique entry animations, and compelling layout."
+          }
+        ]
       }
     },
     {
@@ -79,30 +118,33 @@
         "src": "/images/zenfully-landing/landing-tablet.jpg"
       },
       "details": {
-        "technology": ["ES6", "SCSS", "Pug", "Node.js"],
-        "misc": ["Lead Frontend Dev", "Oct 2019"],
-        "projectType": ["Landing Page", "App Home", "Interactive Experience"]
+        "technology": ["Vue.js", "Pug", "Scss", "Node.js"],
+        "misc": ["Lead Frontend Dev", "Nov 2018"],
+        "projectType": ["Landing Page", "App Home"]
       },
       "pageContent": {
         "link": "https://zenfully.app/",
-        "date": "September 2019",
         "info": "Zenfully Landing page is a landing page I built for the web application Zenfully, a tool that helps users concentrate and sleep better.",
-        "imgsOne": [
-          "/images/zenfully-landing/fullcapture.jpg"
-        ],
-        "showcaseOne": {
-          "type": "lines",
-          "src": "https://via.placeholder.com/900x1250.png/000/fff",
-          "textLines": ["I developed playful", "animations and interactions", "that bring the site to life."]
-        },
-        "imgsTwo": [
-          "/images/creative-landing/creative-brand.jpg"
-        ],
-        "showcaseTwo": {
-          "type": "lines",
-          "src": "https://via.placeholder.com/900x1250.png/000/fff",
-          "textLines": ["I developed playful", "animations and interactions", "that bring the site to life."]
-        }
+        "rows": [
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/zenfully-landing/fullcapture.jpg",
+              "alt": "screenshot of the whole Zenfully landing website",
+              "imgType": "desktop"
+            }
+          },
+          {
+            "type": "info",
+            "img": {
+              "src": "/images/zenfully-landing/deltafreq-mobile.jpg",
+              "alt": "mobile website screenshot",
+              "imgType": "mobile"
+            },
+            "direction": "normal",
+            "text": ["Playful scroll-based", "slides and their animations", "bring the site to life."]
+          }
+        ]
       }
     },
     {
@@ -110,34 +152,27 @@
       "pageName": "Zenfully App",
       "description": "Zenfully App is a Binural Beats generating web application. Its intent is to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
       "card": {
-        "src": "https://via.placeholder.com/900x1250.png/000/fff"
+        "src": "/images/zenfully-app/home-tablet.jpg",
+        "imgType": "tablet"
       },
       "details": {
-        "technology": ["ES6", "SCSS", "Pug", "Node.js"],
-        "misc": ["Lead Frontend Dev", "Oct 2019"],
-        "projectType": ["Landing Page", "App Home", "Interactive Experience"]
+        "technology": ["Vue.js", "Pug", "Scss", "Node.js"],
+        "misc": ["Frontend Dev", "December 2018", "Team: Motiv Studio"],
+        "projectType": ["Web Application", "Binural Beats Generator", "PWA"]
       },
       "pageContent": {
         "link": "https://creatives.motivstud.io/",
-        "date": "September 2019",
         "info": "Zenfully App is a Binural Beats generating web application. Its intent is to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
-        "imgsOne": [
-          "/images/creative-landing/creative-landing.jpg",
-          "/images/creative-landing/creative-brand.jpg"
-        ],
-        "showcaseOne": {
-          "type": "lines",
-          "src": "https://via.placeholder.com/900x1250.png/000/fff",
-          "textLines": ["I developed playful", "animations and interactions", "that bring the site to life."]
-        },
-        "imgsTwo": [
-          "/images/creative-landing/creative-brand.jpg"
-        ],
-        "showcaseTwo": {
-          "type": "lines",
-          "src": "https://via.placeholder.com/900x1250.png/000/fff",
-          "textLines": ["I developed playful", "animations and interactions", "that bring the site to life."]
-        }
+        "rows": [
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/zenfully-app/signin-desktop.jpg",
+              "alt": "desktop sign-in screenshot of Zenfully",
+              "imgType": "desktop"
+            }
+          }
+        ]
       }
     }
   ]

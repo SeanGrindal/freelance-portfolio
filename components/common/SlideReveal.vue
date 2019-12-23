@@ -16,7 +16,7 @@ if (process.client) {
 
 export default {
   data: () => ({
-    dev: false,
+    dev: true,
     welcomeAnime: null,
     welcomeFinished: false
   }),
