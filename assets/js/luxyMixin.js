@@ -1,6 +1,7 @@
 import { mapGetters } from 'vuex'
 if (process.client) {
-  var luxy = require('luxy.js')
+  var luxy = require('~/assets/js/luxy.js').default
+  // var luxy = require('luxy.js')
 }
 
 export default {
