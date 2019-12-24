@@ -1,5 +1,8 @@
 <template lang="html">
   <div :class="['Cursor', type]" ref="custom-cursor">
+    <transition>
+      <div class="text" v-if="text">{{ text }}</div>
+    </transition>
   </div>
 </template>
 
@@ -10,11 +13,13 @@ import Emitter from '~/assets/js/events'
 if (process.client) {
   var anime = require('animejs').default
 }
+
 export default {
   data() {
     return {
       x: null,
       y: null,
+      text: null,
       defaultDiameter: null,
       diameter: null,
       type: 'default'
@@ -37,17 +42,27 @@ export default {
       switch(this.type) {
         case 'default':
           this.setDiameter(this.defaultDiameter)
+          this.text = null
         break
         case 'enlarged':
           this.setDiameter(90)
+          this.text = null
+        break
+        case 'visit':
+          this.setDiameter(90)
+          this.text = 'visit'
         break
       }
     },
     getDefaultDiameter() {
+      if (this.isMobile) return
+
       this.defaultDiameter = getComputedStyle(this.$el).getPropertyValue('--diameter').replace(/\D/g, '') || 0
       this.diameter = this.defaultDiameter
     },
     setDiameter(diameter) {
+      if (this.isMobile) return
+
       this.diameter = diameter
 
       anime({
@@ -62,6 +77,14 @@ export default {
       if (this.isMobile) return
 
       this.$el.style.transform = `matrix(1, 0, 0, 1, ${this.x - this.diameter / 2}, ${this.y - this.diameter / 2})`
+
+      // anime({
+      //   targets: this.$el,
+      //   translateY: this.y - this.diameter / 2,
+      //   translateX: this.x - this.diameter / 2,
+      //   easing: 'easeOutSine',
+      //   duration: 120
+      // })
     }
   },
   mounted() {
@@ -89,7 +112,7 @@ export default {
   --diameter: 60px;
 
   align-items: center;
-  border: solid 1px $cl-black;
+  border: solid 1px var(--cl-red);
   border-radius: 50%;
   box-sizing: border-box;
   pointer-events: none;
@@ -105,10 +128,5 @@ export default {
   width: var(--diameter);
   will-change: transform;
   z-index: 999;
-
-  @supports (mix-blend-mode: exclusion) {
-    border: solid 1px $cl-white;
-    mix-blend-mode: exclusion;
-  }
 }
 </style>

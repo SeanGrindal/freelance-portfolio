@@ -1,34 +1,39 @@
 <template>
   <div class="Home">
+    <landing />
+    <theme-changer />
     <section-header text="Work" />
     <work-grid />
+    <contact-section />
   </div>
 </template>
 
 <script>
-import SectionHeader from '~/components/common/SectionHeader.vue'
+import Landing from '~/components/home/Landing.vue'
+import ContactSection from '~/components/home/contactSection.vue'
+import SectionHeader from '~/components/home/SectionHeader.vue'
 import WorkGrid from '~/components/work/WorkGrid.vue'
+import ThemeChanger from '~/components/common/ThemeChanger.vue'
 import LuxyMixin from '~/assets/js/LuxyMixin.js'
-import ioMixin from '~/assets/js/ioMixin.js'
 import cursorMixin from '~/assets/js/cursorMixin.js'
 
 export default {
-  scrollToTop: true,
-  mixins: [LuxyMixin, ioMixin, cursorMixin],
+  mixins: [LuxyMixin, cursorMixin],
   components: {
+    Landing,
     WorkGrid,
-    SectionHeader
+    SectionHeader,
+    ContactSection,
+    ThemeChanger
   },
+  beforeMount() {
+    window.scrollTo(0, 0)
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.Home {
-  height: 100%;
-  // padding-top: 180vh;
-}
-
-.section-header {
-  margin-top: 60vh;
+.Theme-Changer {
+  margin-top: 30vh;
 }
 </style>

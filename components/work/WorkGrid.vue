@@ -1,10 +1,11 @@
 <template lang="html">
-  <section class="Work-Grid">
+  <section class="Work-Grid" id="work">
     <div class="Work-Grid__wrapper">
       <work-item
         v-for="(page, i) in workPages"
         :class="`Work-Item--${i + 1}`"
         :page="page"
+        :number="i + 1"
         :key="i"
       />
     </div>
@@ -29,6 +30,10 @@ export default {
 .Work-Grid {
   max-width: $bk-max;
   margin: 0 auto;
+
+  @media(min-width: $bk-medium) {
+    padding: 0 1rem;
+  }
 
   .Work-Item {
     width: 100%;
@@ -55,15 +60,15 @@ export default {
     }
 
     @media(min-width: $bk-max) {
-      width: grid-percentage(4);
-      margin-left: grid-percentage(1);
+      width: grid-percentage(5);
+      margin-left: grid-percentage(0);
 
       &:nth-child(even) {
         margin-left: grid-percentage(2);
       }
 
       &:not(:first-child) {
-        margin-top: 14vh;
+        margin-top: 18vh;
       }
 
       &:nth-child(odd) {
@@ -74,6 +79,7 @@ export default {
 }
 
 .Work-Grid__wrapper {
+  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
 }

@@ -2,20 +2,21 @@
   <div class="section-header bold">
     <div class="luxy-el" :data-speed-y="speedY">
       <div class="slider">
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
-        <span class="heading">{{ text }}</span>
+        <span
+          class="heading"
+          v-for="n in 8"
+          :key="n"
+        >
+          {{ text }}
+        </span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters} from 'vuex'
+
 export default {
   props: {
     text: {
@@ -28,8 +29,13 @@ export default {
       speedY: 15
     }
   },
+  computed: {
+    ...mapGetters(['isMobile'])
+  },
   methods: {
     getComputedTranslateXY(obj) {
+      if (this.isMobile) return
+
       if(!window.getComputedStyle) return
     	const transArr = []
       const style = getComputedStyle(obj), transform = style.transform || style.webkitTransform || style.mozTransform
@@ -42,11 +48,17 @@ export default {
       return transArr
     },
     setOffset() {
+      if (this.isMobile) return
+
       const translateY = this.getComputedTranslateXY(this.$el)[1] || 0
       const top = this.$el.getBoundingClientRect().top + window.scrollY - translateY
+
       this.$el.style.transform = `translateY(${-top * (this.speedY / 50)}px)`
+      this.$el.style.marginTop = `${top * (this.speedY / 50)}px`
     },
     resizeHandler() {
+      if (this.isMobile) return
+
       clearTimeout(this.resizeTimeout)
       this.resizeTimeout = setTimeout(() => {
         this.setOffset()
@@ -54,10 +66,17 @@ export default {
     }
   },
   mounted() {
+    if (this.isMobile) return
+
     this.setOffset()
 
     this._resizeHandler = this.resizeHandler.bind(this)
     window.addEventListener('resize', this._resizeHandler)
+
+    setTimeout(() => {
+      this.resizeHandler()
+      this.$el.classList.add('show')
+    }, 100)
   },
   beforeDestroy() {
     window.removeEventListener('resize', this._resizeHandler)
@@ -67,14 +86,20 @@ export default {
 
 <style lang="scss" scoped>
 .section-header {
-  color: rgba($cl-gray, 0.25);
+  color: var(--cl-gray);
   display: inline-flex;
   pointer-events: none;
   font-size: 22vw;
+  opacity: 0;
+  transition: opacity 240ms ease-out;
   will-change: transform;
 
   @media(min-width: $bk-large) {
     font-size: 12vw;
+  }
+
+  &.show {
+    opacity: .25;
   }
 }
 

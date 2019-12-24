@@ -18,6 +18,7 @@
     "sniffer": "github:watsondg/sniffer"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.2.2",
     "@nuxtjs/style-resources": "^1.0.0",
     "cross-env": "^6.0.3",
     "node-sass": "^4.13.0",
