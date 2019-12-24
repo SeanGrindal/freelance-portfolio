@@ -21,11 +21,23 @@ export default {
   plugins: [
     '~plugins/vuex-router-sync.js'
   ],
+  generate: {
+    routes: [
+      '/work/creatives-landing',
+      '/work/ricochet-landing',
+      '/work/zenfully-landing',
+      '/work/zenfully-app'
+    ]
+  },
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: 'UA-145065375-1'
+  },
   /*
   ** Nuxt.js modules
   */
@@ -34,15 +46,5 @@ export default {
     scss: [
       '~/assets/styles/main.scss'
     ]
-  },
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
   }
 }

@@ -192,7 +192,7 @@
         "projectType": ["Web Application", "Binural Beats Generator", "PWA"]
       },
       "pageContent": {
-        "link": "https://creatives.motivstud.io/",
+        "link": "https://my.zenfully.app/sign-in",
         "info": "Zenfully App is a Binaural Beats generating web application. It intends to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
         "rows": [
           {
@@ -212,7 +212,7 @@
             },
             "direction": "normal",
             "heading": "My Role",
-            "text": "I was brought on the project to build out the majority of the application's frontend components and the functionality they controlled. I worked closely with other developers at Motiv Studio to implement my code with their existing framework and functionality."
+            "text": "I was brought on the project to build out the majority of the application's frontend components and parts of the functionality they controlled. I worked closely with other developers at Motiv Studio to implement my code with their existing framework and functionality."
           },
           {
             "type": "doubleImg",

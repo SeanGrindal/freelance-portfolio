@@ -27,6 +27,7 @@ import CopyFooter from '~/components/common/CopyFooter.vue'
 
 
 if (process.client) {
+  require('intersection-observer')
   var luxy = require('luxy.js')
 }
 
