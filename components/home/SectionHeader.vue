@@ -89,17 +89,14 @@ export default {
   color: var(--cl-gray);
   display: inline-flex;
   pointer-events: none;
+  opacity: .25;
   font-size: 22vw;
-  opacity: 0;
-  transition: opacity 240ms ease-out;
+  padding-bottom: 0.25em;
   will-change: transform;
 
   @media(min-width: $bk-large) {
+    padding-bottom: 0;
     font-size: 12vw;
-  }
-
-  &.show {
-    opacity: .25;
   }
 }
 
@@ -116,6 +113,17 @@ export default {
   pointer-events: all;
   padding-left: 0.75em;
   line-height: 1;
+}
+
+html:not(.isMobile) {
+  .section-header {
+    opacity: 0;
+    transition: opacity 240ms ease-out;
+
+    &.show {
+      opacity: .25;
+    }
+  }
 }
 
 @keyframes horizontal-scroll {
