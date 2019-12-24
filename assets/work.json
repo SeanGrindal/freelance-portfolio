@@ -14,7 +14,7 @@
       },
       "pageContent": {
         "link": "https://creatives.motivstud.io/",
-        "info": "Lead frontend developer for Creatives landing, an interactive portfoli page built for Motiv Studio showcasing their creative projects and digital talent.",
+        "info": "Lead frontend developer for Creatives landing, an interactive portfolio page built for Motiv Studio showcasing their creative projects and digital talent.",
         "rows": [
           {
             "type": "img",
@@ -28,7 +28,7 @@
             "type": "img",
             "imgData": {
               "src": "/images/creative-landing/brand-desktop.jpg",
-              "alt": "desktop screenshot of website",
+              "alt": "desktop screenshot of the website",
               "imgType": "desktop"
             }
           },
@@ -36,20 +36,12 @@
             "type": "info",
             "img": {
               "src": "/images/creative-landing/landing-mobile.jpg",
-              "alt": "tablet website screenshot",
+              "alt": "tablet screenshot of the website",
               "imgType": "mobile"
             },
             "direction": "normal",
             "heading": "My Role",
-            "text": "For this project I was tasked with developing the enterity of the frontend experience. I designed and built out the architecture of the website from scratch, planning accordingly for the neccessary features to make this project shine: unique animations, slide-based scroll, and its variouse interactions."
-          },
-          {
-            "type": "img",
-            "imgData": {
-              "src": "/images/creative-landing/contact-desktop.jpg",
-              "alt": "desktop screenshot of website",
-              "imgType": "desktop"
-            }
+            "text": "For this project, I was tasked with developing the entirety of the frontend experience. I designed and built out the architecture of the website from scratch, planning accordingly for the necessary features to make this project shine: unique animations, slide-based scroll, and its various interactions."
           },
           {
             "type": "img",
@@ -68,6 +60,14 @@
             },
             "direction": "reverse",
             "text": ["Playful scroll-based", "slides and their animations", "bring the site to life."]
+          },
+          {
+            "type": "img",
+            "imgData": {
+              "src": "/images/creative-landing/contact-desktop.jpg",
+              "alt": "desktop screenshot of website",
+              "imgType": "desktop"
+            }
           }
         ]
       }
@@ -86,7 +86,7 @@
       },
       "pageContent": {
         "link": "https://ricochet.motivstud.io/",
-        "info": "Ricochet landing is landing page I built for a startup app that helps businesses track important interacting metrics. The site is full of animation and interactions that keep potential users engaged while learning about the application.",
+        "info": "Ricochet landing is a landing page I built for the startup app, Richocet, a tool that aims to help businesses track and visualize important interacting data, allowing them to boost sales and customer satisfaction.",
         "rows": [
           {
             "type": "img",
@@ -105,7 +105,22 @@
             },
             "direction": "normal",
             "heading": "My Role",
-            "text": "For this project I was tasked with developing the enterity of the frontend experience once again. I designed and built out the architecture of the website from scratch, planning accordingly for the neccessary features to make this project shine: unique entry animations, and compelling layout."
+            "text": "For this project, I was brought on to handle all aspects of its visual and interactive experience. I worked closely with the design team to make sure my work delivered on what they had envisioned. The finished site is full of animation and interactions that keep potential users engaged while learning about the application."
+          },
+          {
+            "type": "doubleImg",
+            "imgs": [
+              {
+                "src": "/images/ricochet-landing/landing-tablet.jpg",
+                "alt": "mtablet website screenshot",
+                "imgType": "desktop"
+              },
+              {
+                "src": "/images/ricochet-landing/contact-tablet.jpg",
+                "alt": "tablet website screenshot",
+                "imgType": "desktop"
+              }
+            ]
           }
         ]
       }
@@ -124,7 +139,7 @@
       },
       "pageContent": {
         "link": "https://zenfully.app/",
-        "info": "Zenfully Landing page is a landing page I built for the web application Zenfully, a tool that helps users concentrate and sleep better.",
+        "info": "Zenfully Landing is a landing page I built for the web application Zenfully, a tool that helps users concentrate and sleep.",
         "rows": [
           {
             "type": "img",
@@ -142,7 +157,23 @@
               "imgType": "mobile"
             },
             "direction": "normal",
-            "text": ["Playful scroll-based", "slides and their animations", "bring the site to life."]
+            "heading": "My Role",
+            "text": "I was brought on this project by Motiv Studio to build out the frontend features of this website. This project existed within the larger web application they were working on called Zenfully. They had already designed an architecture for the application which I learned and built the landing page within."
+          },
+          {
+            "type": "doubleImg",
+            "imgs": [
+              {
+                "src": "/images/zenfully-landing/home-mobile.jpg",
+                "alt": "mobile website screenshot",
+                "imgType": "mobile"
+              },
+              {
+                "src": "/images/zenfully-landing/howitworks-mobile.jpg",
+                "alt": "mobile website screenshot",
+                "imgType": "mobile"
+              }
+            ]
           }
         ]
       }
@@ -150,7 +181,7 @@
     {
       "id": "zenfully-app",
       "pageName": "Zenfully App",
-      "description": "Zenfully App is a Binural Beats generating web application. Its intent is to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
+      "description": "Zenfully App is a Binaural Beats generating web application. It intends to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
       "card": {
         "src": "/images/zenfully-app/home-tablet.jpg",
         "imgType": "tablet"
@@ -162,7 +193,7 @@
       },
       "pageContent": {
         "link": "https://creatives.motivstud.io/",
-        "info": "Zenfully App is a Binural Beats generating web application. Its intent is to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
+        "info": "Zenfully App is a Binaural Beats generating web application. It intends to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
         "rows": [
           {
             "type": "img",
@@ -171,6 +202,32 @@
               "alt": "desktop sign-in screenshot of Zenfully",
               "imgType": "desktop"
             }
+          },
+          {
+            "type": "info",
+            "img": {
+              "src": "/images/zenfully-app/presets-mobile.jpg",
+              "alt": "mobile website screenshot",
+              "imgType": "mobile"
+            },
+            "direction": "normal",
+            "heading": "My Role",
+            "text": "I was brought on the project to build out the majority of the application's frontend components and the functionality they controlled. I worked closely with other developers at Motiv Studio to implement my code with their existing framework and functionality."
+          },
+          {
+            "type": "doubleImg",
+            "imgs": [
+              {
+                "src": "/images/zenfully-app/home-mobile.jpg",
+                "alt": "mobile website screenshot",
+                "imgType": "mobile"
+              },
+              {
+                "src": "/images/zenfully-app/menu-mobile.jpg",
+                "alt": "mobile website screenshot",
+                "imgType": "mobile"
+              }
+            ]
           }
         ]
       }

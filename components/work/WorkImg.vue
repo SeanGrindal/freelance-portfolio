@@ -57,6 +57,7 @@ export default {
 
   img {
     display: block;
+    border-radius: 3px;
     box-sizing: content-box;
     box-shadow: 4px 4px 20px 8px rgba(black, 0.1);
     width: 100%;

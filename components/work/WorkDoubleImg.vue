@@ -27,5 +27,30 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.Work-Double-Img {
+  .Work-Img:first-child {
+    padding-bottom: 6vh;
+  }
+
+  @media(min-width: $bk-large) {
+    align-items: stretch;
+    display: flex;
+
+    .Work-Img:first-child {
+      padding-right: 3vh;
+      padding-bottom: 0;
+      width: 50%;
+    }
+
+    .Work-Img:last-child {
+      padding-left: 3vh;
+      width: 50%;
+    }
+
+    .background {
+      height: 100%;
+    }
+  }
+}
 </style>

@@ -22,7 +22,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
 .Next-Footer {
   align-items: center;

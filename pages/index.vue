@@ -9,12 +9,11 @@
 </template>
 
 <script>
-import Landing from '~/components/intro/Landing.vue'
-import SectionHeader from '~/components/common/SectionHeader.vue'
+import Landing from '~/components/home/Landing.vue'
+import ContactSection from '~/components/home/contactSection.vue'
+import SectionHeader from '~/components/home/SectionHeader.vue'
 import WorkGrid from '~/components/work/WorkGrid.vue'
-import ContactSection from '~/components/contact/contactSection.vue'
 import ThemeChanger from '~/components/common/ThemeChanger.vue'
-
 import LuxyMixin from '~/assets/js/LuxyMixin.js'
 import cursorMixin from '~/assets/js/cursorMixin.js'
 

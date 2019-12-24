@@ -38,7 +38,7 @@ export default {
   justify-content: flex-start;
   margin: 18vh auto;
   max-width: $bk-max;
-  padding: 12vh 1rem;
+  padding: 12vmin 1rem;
   padding-bottom: 4vh;
   width: 100%;
 
