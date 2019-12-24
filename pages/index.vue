@@ -14,7 +14,7 @@ import ContactSection from '~/components/home/contactSection.vue'
 import SectionHeader from '~/components/home/SectionHeader.vue'
 import WorkGrid from '~/components/work/WorkGrid.vue'
 import ThemeChanger from '~/components/common/ThemeChanger.vue'
-import LuxyMixin from '~/assets/js/LuxyMixin.js'
+import LuxyMixin from '~/assets/js/luxyMixin.js'
 import cursorMixin from '~/assets/js/cursorMixin.js'
 
 export default {

@@ -48,7 +48,7 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 
-import LuxyMixin from '~/assets/js/LuxyMixin.js'
+import LuxyMixin from '~/assets/js/luxyMixin.js'
 import cursorMixin from '~/assets/js/cursorMixin.js'
 
 import WorkIntro from '~/components/work/WorkIntro.vue'
