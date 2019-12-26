@@ -55,6 +55,7 @@ export default {
   white-space: nowrap;
   visibility: hidden;
   padding: 1.5vh 1rem;
+  will-change: transform;
 
   @media(min-width: $bk-large) {
     font-size: 6vw;

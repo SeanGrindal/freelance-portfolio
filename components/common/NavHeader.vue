@@ -29,23 +29,23 @@ export default {
   methods: {
     scrollToSection(e) {
       e.preventDefault()
-      e.target.getAttribute('href').scrollIntoView({
-        behavior: 'smooth'
+      const el = document.querySelector(e.target.getAttribute('href').replace(/\\|\//g, ''))
+
+      window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: el.getBoundingClientRect().top + window.scrollY
       })
     }
   },
   mounted() {
-    if (!this.isMobile) return
-
-    this.links = document.querySelectorAll('a[href^="#"]')
+    this.links = document.querySelectorAll('a[href^="/#"]')
 
     this.links.forEach(anchor => {
       anchor.addEventListener('click', this.scrollToSection)
     })
   },
   beforeDestroy() {
-    if (!this.isMobile) return
-
     this.links.forEach(anchor => {
       anchor.removeEventListener('click', this.scrollToSection)
     })

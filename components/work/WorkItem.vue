@@ -2,6 +2,7 @@
   <nuxt-link class="Work-Item" :to="`/work/${page.id}`">
     <div class="img-wrapper" ref="imgWrapper">
       <work-img
+        :isLazy="false"
         :imgData="{
           src: page.card.src,
           alt: page.pageName
@@ -105,6 +106,7 @@ html:not(.isMobile) {
       overflow: hidden;
       -webkit-clip-path: polygon(0% 30%, 110% 30%, 110% 110%, 0% 110%);
       clip-path: polygon(0% 30%, 110% 30%, 110% 110%, 0% 110%);
+      will-change: clip-path;
     }
 
     img {

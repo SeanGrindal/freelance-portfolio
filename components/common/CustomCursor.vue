@@ -77,14 +77,6 @@ export default {
       if (this.isMobile) return
 
       this.$el.style.transform = `matrix(1, 0, 0, 1, ${this.x - this.diameter / 2}, ${this.y - this.diameter / 2})`
-
-      // anime({
-      //   targets: this.$el,
-      //   translateY: this.y - this.diameter / 2,
-      //   translateX: this.x - this.diameter / 2,
-      //   easing: 'easeOutSine',
-      //   duration: 120
-      // })
     }
   },
   mounted() {
