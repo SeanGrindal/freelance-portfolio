@@ -27,16 +27,16 @@ export default {
   align-items: center;
   justify-content: center;
   display: flex;
-  min-height: 100vh;
   margin: 0 auto;
-  margin-top: 16vh;
-  padding: 0 1rem;
+  padding: 16vh 1rem;
+  padding-bottom: 22vh;
   width: 100%;
 
   @media(min-width: $bk-medium) {
+    padding: 0 1rem;
+    min-height: 100vh;
     width: auto;
   }
-
 
   .content {
     display: flex;

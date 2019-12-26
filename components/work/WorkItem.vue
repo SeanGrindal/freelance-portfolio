@@ -85,6 +85,7 @@ export default {
 
   .caption {
     margin-top: 0.25em;
+    margin-bottom: 0.75em;
     padding: 1em;
 
     @media(min-width: $bk-large) {

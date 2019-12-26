@@ -79,6 +79,5 @@ export default {
 <style lang="scss" scoped>
 .Landing {
   padding-top: 30vh;
-  min-height: 100vh;
 }
 </style>

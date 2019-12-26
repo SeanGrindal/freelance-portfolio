@@ -4,11 +4,13 @@
       <span>S</span>
       <span class="bold logo-g">G</span>
     </nuxt-link>
-    <nav class="sz-small" v-if="isHome">
-      <a href="/#landing">About</a>
-      <a href="/#work">Work</a>
-      <a href="/#contact">Contact</a>
-    </nav>
+    <transition name="fade">
+      <nav class="sz-small" v-if="isHome">
+        <a href="/#landing">About</a>
+        <a href="/#work">Work</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </transition>
   </header>
 </template>
 
@@ -101,5 +103,12 @@ export default {
       margin: 0 1em;
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 600ms ease-out;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

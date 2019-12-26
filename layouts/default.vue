@@ -48,6 +48,8 @@ export default {
   methods: {
     ...mapActions(['checkMobile']),
     setTheme(theme) {
+      if (this.isMobile) return
+      
       if (this.themeTimeout) {
         clearTimeout(this.themeTimeout)
         this.themeTimeout = null
@@ -126,7 +128,7 @@ html {
   }
 
   ::-moz-selection {
-    background: var(--cl-black);
+    background-color: var(--cl-black);
     color: var(--cl-white);
   }
 
