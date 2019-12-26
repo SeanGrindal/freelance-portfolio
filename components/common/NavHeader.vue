@@ -5,7 +5,7 @@
       <span class="bold logo-g">G</span>
     </nuxt-link>
     <transition name="fade">
-      <nav class="sz-small" v-if="isHome">
+      <nav class="sz-small" v-show="isHome">
         <a href="/#landing">About</a>
         <a href="/#work">Work</a>
         <a href="/#contact">Contact</a>
@@ -32,7 +32,7 @@ export default {
     scrollToSection(e) {
       e.preventDefault()
       const el = document.querySelector(e.target.getAttribute('href').replace(/\\|\//g, ''))
-
+        
       window.scroll({
         behavior: 'smooth',
         left: 0,
