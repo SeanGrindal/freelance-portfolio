@@ -4,11 +4,13 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Sean Grindal',
+    title: 'Sean Grindal | Freelance Web Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'author', content: 'Sean Grindal' },
+      { hid: 'description', name: 'description', content: "My name's Sean Grindal. I am a freelance web developer working from Calgary Alberta. I work with startups, digital agencies, and aspiring individuals to build their unique digital products. " },
+      { name: 'keywords', content: 'Sean Grindal, Web developer, Web Application Developer, Freelancer, Calgary, Alberta, Canada' }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap' },
