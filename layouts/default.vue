@@ -8,7 +8,6 @@
       <nuxt />
     </main>
 
-
     <custom-cursor ref="customCursor" v-if="!isMobile"/>
     <div v-else></div>
 
@@ -103,8 +102,6 @@ export default {
   }
 }
 </script>
-
-</script lang="scss">
 
 <style lang="scss">
 html {

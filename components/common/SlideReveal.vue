@@ -2,7 +2,7 @@
   <div class="Slide-Reveal">
     <h5 class="sz-heading welcome">
       <span ref="welcomeText">Hey.</span>
-    </h1>
+    </h5>
   </div>
 </template>
 
