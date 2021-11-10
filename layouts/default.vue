@@ -8,7 +8,7 @@
       <nuxt />
     </main>
 
-    <custom-cursor ref="customCursor" v-if="!isMobile"/>
+    <custom-cursor ref="customCursor" v-if="!isMobile" />
     <div v-else></div>
 
     <slide-reveal />
@@ -16,18 +16,17 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import Emitter from '~/assets/js/events'
+import { mapGetters, mapActions } from "vuex";
+import Emitter from "~/assets/js/events";
 
-import NavHeader from '~/components/common/NavHeader.vue'
-import CustomCursor from '~/components/common/CustomCursor.vue'
-import SlideReveal from '~/components/common/SlideReveal.vue'
-import CopyFooter from '~/components/common/CopyFooter.vue'
-
+import NavHeader from "~/components/common/NavHeader.vue";
+import CustomCursor from "~/components/common/CustomCursor.vue";
+import SlideReveal from "~/components/common/SlideReveal.vue";
+import CopyFooter from "~/components/common/CopyFooter.vue";
 
 if (process.client) {
-  require('intersection-observer')
-  var luxy = require('~/assets/js/luxy.js')
+  require("intersection-observer");
+  var luxy = require("~/assets/js/luxy.js");
 }
 
 export default {
@@ -35,72 +34,75 @@ export default {
     CustomCursor,
     SlideReveal,
     NavHeader,
-    CopyFooter
+    CopyFooter,
   },
   data: () => ({
     themeTimeout: null,
   }),
   computed: {
-    ...mapGetters(['isMobile']),
-    ...mapGetters(['currentWorkPageNum'])
+    ...mapGetters(["isMobile"]),
+    ...mapGetters(["currentWorkPageNum"]),
   },
   methods: {
-    ...mapActions(['checkMobile']),
+    ...mapActions(["checkMobile"]),
     setTheme(theme) {
-      if (this.isMobile) return
-      
+      if (this.isMobile) return;
+
       if (this.themeTimeout) {
-        clearTimeout(this.themeTimeout)
-        this.themeTimeout = null
+        clearTimeout(this.themeTimeout);
+        this.themeTimeout = null;
       }
 
-      document.documentElement.classList.add('theme-transition')
+      document.documentElement.classList.add("theme-transition");
       this.themeTimeout = window.setTimeout(() => {
-        document.documentElement.classList.remove('theme-transition')
-      }, 1000)
+        document.documentElement.classList.remove("theme-transition");
+      }, 1000);
 
-      document.documentElement.setAttribute('data-theme', theme)
+      document.documentElement.setAttribute("data-theme", theme);
     },
     tick() {
       requestAnimationFrame(() => {
         if (!this.isMobile) {
-          this.$refs.customCursor.tick()
+          this.$refs.customCursor.tick();
         }
 
-        this.tick()
-      })
+        this.tick();
+      });
     },
   },
   beforeMount() {
-    this.checkMobile()
+    this.checkMobile();
   },
   mounted() {
     window.onbeforeunload = () => {
       if (!this.isMobile) {
-        luxy.resetLuxy()
+        luxy.resetLuxy();
       }
 
-      window.scrollTo(0, 0)
-    }
+      window.scrollTo(0, 0);
+    };
 
     if (this.isMobile) {
-      document.querySelector('html').classList.add('isMobile')
+      document.querySelector("html").classList.add("isMobile");
     }
 
-    this._setTheme = this.setTheme
-    Emitter.on('SET_THEME', this._setTheme)
+    this._setTheme = this.setTheme;
+    Emitter.on("SET_THEME", this._setTheme);
 
-    this.tick()
+    this.tick();
 
-    Emitter.emit('APP_READY')
+    Emitter.emit("APP_READY");
 
-    console.log('%cDeveloped and designed by @SeanGrindal', "font-weight: bold; color: #FF5050;")
-    console.log("%cI am also willing to take a full-time developer position so shoot me an email at hello@seangrindal.dev if you have an open position.", "font-weight: bold;")
+    console.log(
+      "%cDeveloped and designed by @SeanGrindal",
+      "font-weight: bold; color: #FF5050;"
+    );
+    console.log("%cI am looking for an internship.", "font-weight: bold;");
   },
   beforeDestroy() {
-    Emitter.removeListener('SET_THEME', this._seTheme)
-  }
-}
+    Emitter.removeListener("SET_THEME", this._seTheme);
+  },
+};
 </script>
 
 <style lang="scss">
@@ -141,16 +143,18 @@ html {
 }
 
 .Default-Layout {
-  font-family:'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.2;
   overflow: hidden;
 }
 
-.page-enter-active, .page-leave-active {
+.page-enter-active,
+.page-leave-active {
   transition: opacity 600ms ease-out;
 }
-.page-enter, .page-leave-to {
+.page-enter,
+.page-leave-to {
   opacity: 0;
 }
 
@@ -158,7 +162,8 @@ html {
   z-index: 2;
 }
 
-#__nuxt, #__layout {
+#__nuxt,
+#__layout {
   height: 100%;
 }
 </style>

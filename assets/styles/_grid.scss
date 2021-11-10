@@ -1,5 +1,7 @@
+@use "sass:math";
+
 @function grid-percentage($row-width) {
-  $result: (100% / 12) * $row-width;
+  $result: math.div(100%, 12) * $row-width;
 
   @return $result;
 }

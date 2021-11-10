@@ -13,15 +13,15 @@
   "dependencies": {
     "animejs": "^3.1.0",
     "intersection-observer": "^0.7.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.4",
     "sniffer": "github:watsondg/sniffer"
   },
   "devDependencies": {
-    "@nuxtjs/google-analytics": "^2.2.2",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "cross-env": "^6.0.3",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^10.2.0",
     "vuex-router-sync": "^5.0.0"
   }
 }
