@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/work/creatives-landing", {data:[{}],fetch:{},mutations:[]});
