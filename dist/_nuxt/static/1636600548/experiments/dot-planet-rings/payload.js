@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/experiments/dot-planet-rings", {data:[{}],fetch:{},mutations:[]});
