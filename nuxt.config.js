@@ -74,5 +74,8 @@ export default {
 	modules: ['@nuxtjs/style-resources'],
 	styleResources: {
 		scss: ['~/assets/styles/main.scss']
+	},
+	generate: {
+		fallback: true
 	}
 }
