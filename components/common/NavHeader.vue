@@ -1,114 +1,126 @@
 <template lang="html">
-  <header class="Nav-Header">
-    <nuxt-link class="logo" to="/">
-      <span>S</span>
-      <span class="bold logo-g">G</span>
-    </nuxt-link>
-    <transition name="fade">
-      <nav class="sz-small" v-show="isHome">
-        <a href="/#landing">About</a>
-        <a href="/#work">Work</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-    </transition>
-  </header>
+	<header class="Nav-Header">
+		<nuxt-link class="logo" to="/">
+			<span>S</span>
+			<span class="bold logo-g">G</span>
+		</nuxt-link>
+		<transition name="fade">
+			<nav class="sz-small" v-show="isHome">
+				<a href="/#landing">About</a>
+				<a href="/#work">Work</a>
+				<a href="/#exps">Experimemts</a>
+				<a href="/#contact">Contact</a>
+			</nav>
+		</transition>
+	</header>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
 export default {
-  data: () => ({
-    links: null
-  }),
-  computed: {
-    ...mapGetters(['isMobile', 'currentWorkPageNum']),
-    isHome() {
-      if (this.currentWorkPageNum == -1) return true
-      else return false
-    }
-  },
-  methods: {
-    scrollToSection(e) {
-      e.preventDefault()
-      const el = document.querySelector(e.target.getAttribute('href').replace(/\\|\//g, ''))
-        
-      window.scroll({
-        behavior: 'smooth',
-        left: 0,
-        top: el.getBoundingClientRect().top + window.scrollY
-      })
-    }
-  },
-  mounted() {
-    this.links = document.querySelectorAll('a[href^="/#"]')
+	data: () => ({
+		links: null
+	}),
+	computed: {
+		...mapGetters(['isMobile', 'currentWorkPageNum']),
+		isHome() {
+			if (this.$route.name == 'index') return true
+			else return false
+		}
+	},
+	methods: {
+		scrollToSection(e) {
+			e.preventDefault()
+			const el = document.querySelector(e.target.getAttribute('href').replace(/\\|\//g, ''))
 
-    this.links.forEach(anchor => {
-      anchor.addEventListener('click', this.scrollToSection)
-    })
-  },
-  beforeDestroy() {
-    this.links.forEach(anchor => {
-      anchor.removeEventListener('click', this.scrollToSection)
-    })
-  }
+			window.scroll({
+				behavior: 'smooth',
+				left: 0,
+				top: el.getBoundingClientRect().top + window.scrollY
+			})
+		}
+	},
+	mounted() {
+		this.links = document.querySelectorAll('a[href^="/#"]')
+
+		this.links.forEach(anchor => {
+			anchor.addEventListener('click', this.scrollToSection)
+		})
+	},
+	beforeDestroy() {
+		this.links.forEach(anchor => {
+			anchor.removeEventListener('click', this.scrollToSection)
+		})
+	}
 }
 </script>
 
 <style lang="scss" scoped>
 .Nav-Header {
-  position: fixed;
-  margin: auto;
-  left: 0;
-  right: 0;
-  max-width: $bk-max;
-  padding: .25em 0;
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none;
-  width: 100%;
-  z-index: 100;
+	position: fixed;
+	margin: auto;
+	left: 0;
+	right: 0;
+	max-width: $bk-max;
+	padding: 0.25em 0;
+	display: flex;
+	justify-content: space-between;
+	pointer-events: none;
+	width: 100%;
+	z-index: 100;
 
-  @media(min-width: $bk-large) {
-    padding: 1em 0;
-  }
+	@media (min-width: $bk-large) {
+		padding: 1em 0;
+	}
 
-  @media(min-width: $bk-ultwd) {
-    padding: 4em 0;
-    max-width: $bk-ultwd;
-  }
+	@media (min-width: $bk-ultwd) {
+		padding: 4em 0;
+		max-width: $bk-ultwd;
+	}
 
-  .logo {
-    font-size: 1.75rem;
-    letter-spacing: 0px;
+	nav {
+		a:nth-child(3) {
+			display: none;
 
-    .logo-g {
-      margin-left: -.25em;
-    }
-  }
+			@media (min-width: 480px) {
+				display: initial;
+			}
+		}
+	}
 
-  a {
-    display: inline-block;
-    padding: 1.1rem 1rem;
-    mix-blend-mode: exclusion;
-    pointer-events: all;
-  }
+	.logo {
+		font-size: 1.75rem;
+		letter-spacing: 0px;
 
-  a:not(.logo) {
-    font-weight: 700;
-  }
+		.logo-g {
+			margin-left: -0.25em;
+		}
+	}
 
-  .middle {
-    @media(min-width: $bk-medium) {
-      margin: 0 1em;
-    }
-  }
+	a {
+		display: inline-block;
+		padding: 1.1rem 1rem;
+		mix-blend-mode: exclusion;
+		pointer-events: all;
+	}
+
+	a:not(.logo) {
+		font-weight: 700;
+	}
+
+	.middle {
+		@media (min-width: $bk-medium) {
+			margin: 0 1em;
+		}
+	}
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 600ms ease-out;
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 600ms ease-out;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+	opacity: 0;
 }
 </style>

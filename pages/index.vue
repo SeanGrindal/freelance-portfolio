@@ -1,11 +1,14 @@
 <template>
-  <div class="Home">
-    <landing />
-    <theme-changer />
-    <section-header text="Work" />
-    <work-grid />
-    <contact-section />
-  </div>
+	<div class="Home">
+		<landing />
+		<theme-changer />
+		<further-about />
+		<section-header text="Projects" class="project-section-header" />
+		<work-grid />
+		<section-header text="Experimemts" class="experiments-section-header" />
+		<work-grid type="exps" />
+		<contact-section />
+	</div>
 </template>
 
 <script>
@@ -18,22 +21,32 @@ import LuxyMixin from '~/assets/js/luxyMixin.js'
 import cursorMixin from '~/assets/js/cursorMixin.js'
 
 export default {
-  mixins: [LuxyMixin, cursorMixin],
-  components: {
-    Landing,
-    WorkGrid,
-    SectionHeader,
-    ContactSection,
-    ThemeChanger
-  },
-  beforeMount() {
-    window.scrollTo(0, 0)
-  }
+	mixins: [LuxyMixin, cursorMixin],
+	components: {
+		Landing,
+		WorkGrid,
+		SectionHeader,
+		ContactSection,
+		ThemeChanger
+	},
+	beforeMount() {
+		window.scrollTo(0, 0)
+	}
 }
 </script>
 
 <style lang="scss" scoped>
 .Theme-Changer {
-  margin-top: 30vh;
+	margin-top: 30vh;
+}
+
+.project-section-header {
+	margin-top: 30vh;
+	margin-bottom: 6vh;
+}
+
+.experiments-section-header {
+	margin-top: 40vh;
+	margin-bottom: 6vh;
 }
 </style>

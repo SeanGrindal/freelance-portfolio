@@ -1,15 +1,15 @@
 <template lang="html">
-  <section class="Work-Grid" id="work">
-    <div class="Work-Grid__wrapper">
-      <work-item
-        v-for="(page, i) in workPages"
-        :class="`Work-Item--${i + 1}`"
-        :page="page"
-        :number="i + 1"
-        :key="i"
-      />
-    </div>
-  </section>
+	<section class="Work-Grid" :id="type">
+		<div class="Work-Grid__wrapper">
+			<work-item
+				v-for="(page, i) in workPages.filter(page => page.type == type)"
+				:class="`Work-Item--${i + 1}`"
+				:page="page"
+				:number="i + 1"
+				:key="i"
+			/>
+		</div>
+	</section>
 </template>
 
 <script>
@@ -17,70 +17,76 @@ import { mapState } from 'vuex'
 
 import WorkItem from '~/components/work/WorkItem.vue'
 export default {
-  components: {
-    WorkItem
-  },
-  computed:{
-    ...mapState(['workPages']),
-  }
+	components: {
+		WorkItem
+	},
+	props: {
+		type: {
+			type: String,
+			default: 'work'
+		}
+	},
+	computed: {
+		...mapState(['workPages'])
+	}
 }
 </script>
 
 <style lang="scss" scoped>
 .Work-Grid {
-  max-width: $bk-max;
-  margin: 0 auto;
+	max-width: $bk-max;
+	margin: 0 auto;
 
-  @media(min-width: $bk-medium) {
-    padding: 0 1rem;
-  }
+	@media (min-width: $bk-medium) {
+		padding: 0 1rem;
+	}
 
-  .Work-Item {
-    width: 100%;
+	.Work-Item {
+		width: 100%;
 
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
 
-    @media(min-width: $bk-medium) {
-      width: grid-percentage(5);
-      margin-left: grid-percentage(0.5);
+		@media (min-width: $bk-medium) {
+			width: grid-percentage(5);
+			margin-left: grid-percentage(0.5);
 
-      &:nth-child(even) {
-        margin-left: grid-percentage(1);
-      }
+			&:nth-child(even) {
+				margin-left: grid-percentage(1);
+			}
 
-      &:not(:first-child) {
-        margin-top: 14vh;
-      }
+			&:not(:first-child) {
+				margin-top: 14vh;
+			}
 
-      &:nth-child(odd) {
-        margin-top: 2vh;
-      }
-    }
+			&:nth-child(odd) {
+				margin-top: 2vh;
+			}
+		}
 
-    @media(min-width: $bk-max) {
-      width: grid-percentage(5);
-      margin-left: grid-percentage(0);
+		@media (min-width: $bk-max) {
+			width: grid-percentage(5);
+			margin-left: grid-percentage(0);
 
-      &:nth-child(even) {
-        margin-left: grid-percentage(2);
-      }
+			&:nth-child(even) {
+				margin-left: grid-percentage(2);
+			}
 
-      &:not(:first-child) {
-        margin-top: 18vh;
-      }
+			&:not(:first-child) {
+				margin-top: 18vh;
+			}
 
-      &:nth-child(odd) {
-        margin-top: 2vh;
-      }
-    }
-  }
+			&:nth-child(odd) {
+				margin-top: 2vh;
+			}
+		}
+	}
 }
 
 .Work-Grid__wrapper {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
+	align-items: flex-start;
+	display: flex;
+	flex-wrap: wrap;
 }
 </style>
