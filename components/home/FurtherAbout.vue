@@ -2,18 +2,17 @@
 	<section class="further-about-info">
 		<line-reveal class="reveal--subheading bold" :lines="['More About Me']" />
 		<text-block>
-			After having taught myself how to program, I began contracting as a front-end web developer
-			for a <a href="https://motiv.digital/" target="_blank">web agency</a> shortly after starting
-			high school. I was granted the opportunity to work closely with senior developers and
-			designers as a frontend developer on various websites and web applications. Working in a
-			professional environment at such a young age was exhilerating and provided invaluable
-			experience and opportunties.
+			After having taught myself how to program, I began contracting as a frontend web developer for
+			a <a href="https://motiv.digital/" target="_blank">web agency</a> shortly after starting high
+			school. I was granted the opportunity to work closely with senior developers and designers on
+			various websites and web applications. Working in a professional environment at such a young
+			age was exhilerating and provided invaluable experience and opportunties.
 		</text-block>
 		<text-block>
 			To gain further professional experience, I took a gap year before university to work for
 			<a href="https://anoa.ca/" target="_blank">another agency</a>
 			focused on creating portfolio sites for the film industry before university. During the year I
-			lead the planning and development of new internal architectures and tools used in the
+			led the planning and development of new internal architectures and tools used in the
 			development of all their contemporary client projects.
 		</text-block>
 		<text-block>
