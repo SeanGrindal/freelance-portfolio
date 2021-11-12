@@ -4,9 +4,9 @@
 		<theme-changer />
 		<further-about />
 		<section-header text="Projects" class="project-section-header" />
-		<work-grid />
+		<work-grid :projects="workProjs" />
 		<section-header text="Experimemts" class="experiments-section-header" />
-		<work-grid type="exps" />
+		<work-grid type="exps" :projects="experiments" />
 		<contact-section />
 	</div>
 </template>
@@ -31,6 +31,14 @@ export default {
 	},
 	beforeMount() {
 		window.scrollTo(0, 0)
+	},
+	computed: {
+		workProjs() {
+			return this.$store.state.workPages
+		},
+		experiments() {
+			return this.$store.state.experiments
+		}
 	}
 }
 </script>

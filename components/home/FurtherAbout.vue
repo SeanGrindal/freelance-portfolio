@@ -18,9 +18,8 @@
 		<text-block>
 			I'm currently taking computer science at the University of Toronto and looking for internship
 			opportunities for summer '22. I still love to experiment with cool new technology by working
-			on smaller side projects. Keep scrolling if you want to see some! If you're looking for a
-			formal resume you can find it
-			<a href="/resume.pdf" target="_blank">here</a>. If you have a position,
+			on smaller side projects. Keep scrolling if you want to see some! If you want more details,
+			here is my formal <a href="/resume.pdf" target="_blank">resume</a>. If you have a position,
 			<a href="/#contact">contact me!</a> :D
 		</text-block>
 

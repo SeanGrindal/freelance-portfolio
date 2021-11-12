@@ -2,7 +2,7 @@
 	<section class="Work-Grid" :id="type">
 		<div class="Work-Grid__wrapper">
 			<work-item
-				v-for="(page, i) in workPages.filter(page => page.type == type)"
+				v-for="(page, i) in projects"
 				:class="`Work-Item--${i + 1}`"
 				:page="page"
 				:number="i + 1"
@@ -24,10 +24,11 @@ export default {
 		type: {
 			type: String,
 			default: 'work'
+		},
+		projects: {
+			type: Array,
+			required: true
 		}
-	},
-	computed: {
-		...mapState(['workPages'])
 	}
 }
 </script>

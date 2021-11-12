@@ -53,7 +53,7 @@ export default {
 			let offsetTop = this.$el.getBoundingClientRect().top - window.innerHeight / 2
 			// const translateY = this.getComputedTranslateXY(this.$el)[1] || 0
 			// const top = this.$el.getBoundingClientRect().top + window.scrollY - translateY
-			requestAnimationFrame(() => {
+			this.aniFrame = requestAnimationFrame(() => {
 				this.$refs['slider'].style.transform = `translateY(${Math.round(offsetTop * -0.3)}px)`
 
 				this.setOffset()

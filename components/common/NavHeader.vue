@@ -25,7 +25,7 @@ export default {
 	computed: {
 		...mapGetters(['isMobile', 'currentWorkPageNum']),
 		isHome() {
-			if (this.$route.name == 'index') return true
+			if (this.$route.name == 'index' || this.$route.name == null) return true
 			else return false
 		}
 	},
