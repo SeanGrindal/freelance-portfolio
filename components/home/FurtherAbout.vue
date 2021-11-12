@@ -11,9 +11,9 @@
 		<text-block>
 			To gain further professional experience, I took a gap year before university to work for
 			<a href="https://anoa.ca/" target="_blank">another agency</a>
-			focused on creating portfolio sites for the film industry before university. During the year I
-			led the planning and development of new internal architectures and tools used in the
-			development of all their contemporary client projects.
+			focused on creating portfolio sites for the film industry. During the year I led the planning
+			and development of new internal architectures and tools used in the development of all their
+			contemporary client projects.
 		</text-block>
 		<text-block>
 			I'm currently taking computer science at the University of Toronto and looking for internship
