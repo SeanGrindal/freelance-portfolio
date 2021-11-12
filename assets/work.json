@@ -77,7 +77,7 @@
 						},
 						"direction": "normal",
 						"heading": "The Process",
-						"text": "Open-source packages are the lifeblood of development communities. They abstract away monotonous complications and enable the community to build projects faster and with less hassle. I had always been intrigued by learning how to write packages so I gave it a shot with Custom Cursor JS."
+						"text": "Open-source packages are the lifeblood of development communities. They abstract away monotonous tasks and enable the community to build projects faster and with less hassle. I had always been intrigued by learning how to write packages so I gave it a shot with Custom Cursor JS."
 					},
 					{
 						"type": "img",
