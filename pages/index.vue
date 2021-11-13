@@ -49,12 +49,12 @@ export default {
 }
 
 .project-section-header {
-	margin-top: 30vh;
+	margin-top: 44vh;
 	margin-bottom: 6vh;
 }
 
 .experiments-section-header {
-	margin-top: 40vh;
+	margin-top: 56vh;
 	margin-bottom: 6vh;
 }
 </style>
