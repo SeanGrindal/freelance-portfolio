@@ -49,7 +49,7 @@ export default {
 }
 
 .project-section-header {
-	margin-top: 44vh;
+	margin-top: 50vh;
 	margin-bottom: 6vh;
 }
 

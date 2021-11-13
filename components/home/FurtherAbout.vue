@@ -5,8 +5,9 @@
 			After having taught myself how to program, I began contracting as a frontend web developer for
 			a <a href="https://motiv.digital/" target="_blank">web agency</a> shortly after starting high
 			school. I was granted the opportunity to work closely with senior developers and designers on
-			various websites and web applications. Working in a professional environment at such a young
-			age was exhilerating and provided invaluable experience and opportunties.
+			various websites and web applications.
+			<!-- Working in a professional environment at such a young
+			age was exhilerating and provided invaluable experience and opportunties. -->
 		</text-block>
 		<text-block>
 			To gain further professional experience, I took a gap year before university to work for
@@ -17,10 +18,11 @@
 		</text-block>
 		<text-block>
 			I'm currently taking computer science at the University of Toronto and looking for internship
-			opportunities for summer '22. I still love to experiment with cool new technology by working
-			on smaller side projects. Keep scrolling if you want to see some! If you want more details,
-			here is my formal <a href="/resume.pdf" target="_blank">resume</a>. If you have a position,
-			<a href="/#contact">contact me!</a> :D
+			opportunities for summer '22.
+			<!-- I still love to experiment with cool new technology by working
+			on smaller side projects. Keep scrolling if you want to see some!  -->
+			If you want more details, here is my formal <a href="/resume.pdf" target="_blank">resume</a>.
+			If you have a position, <a href="/#contact">contact me!</a> :D
 		</text-block>
 
 		<contact-reel speed="slow" />

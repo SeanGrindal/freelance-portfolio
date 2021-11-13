@@ -39,7 +39,7 @@ export default {
 		}
 
 		&.speed--slow {
-			animation: horizontal-scroll 28s linear infinite;
+			animation: horizontal-scroll 40s linear infinite;
 		}
 
 		&:hover {

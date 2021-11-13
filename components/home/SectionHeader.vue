@@ -123,7 +123,7 @@ export default {
 }
 
 .slider {
-	animation: horizontal-scroll 20s linear infinite;
+	animation: horizontal-scroll 50s linear infinite;
 }
 
 .slider-wrapper {
