@@ -32,33 +32,15 @@ export default {
 		...mapGetters(['isMobile'])
 	},
 	methods: {
-		getComputedTranslateXY(obj) {
-			if (this.isMobile) return
-
-			if (!window.getComputedStyle) return
-			const transArr = []
-			const style = getComputedStyle(obj),
-				transform = style.transform || style.webkitTransform || style.mozTransform
-
-			let mat = transform.match(/^matrix3d\((.+)\)$/)
-			if (mat) return parseFloat(mat[1].split(', ')[13])
-			mat = transform.match(/^matrix\((.+)\)$/)
-			mat ? transArr.push(parseFloat(mat[1].split(', ')[4])) : 0
-			mat ? transArr.push(parseFloat(mat[1].split(', ')[5])) : 0
-			return transArr
-		},
 		setOffset() {
 			if (this.isMobile) return
 
 			let offsetTop = this.$el.getBoundingClientRect().top - window.innerHeight / 2
-			// const translateY = this.getComputedTranslateXY(this.$el)[1] || 0
-			// const top = this.$el.getBoundingClientRect().top + window.scrollY - translateY
 			this.aniFrame = requestAnimationFrame(() => {
 				this.$refs['slider'].style.transform = `translateY(${Math.round(offsetTop * -0.3)}px)`
 
 				this.setOffset()
 			})
-			// this.$el.style.marginTop = `${top * (this.speedY / 50)}px`
 		},
 		resizeHandler() {
 			if (this.isMobile) return
@@ -72,26 +54,13 @@ export default {
 	mounted() {
 		if (this.isMobile) return
 
-		this.setOffset()
-
-		// this._resizeHandler = this.resizeHandler.bind(this)
-		// window.addEventListener('resize', this._resizeHandler)
-
-		// window.addEventListener('scroll', this.setOffset)
-
 		this.aniFrame = requestAnimationFrame(() => {
-			this.setOffset
-		})
+			this.setOffset()
 
-		// setTimeout(() => {
-		// 	this.resizeHandler()
-		this.$el.classList.add('show')
-		// }, 100)
+			this.$el.classList.add('show')
+		})
 	},
 	beforeDestroy() {
-		window.removeEventListener('resize', this._resizeHandler)
-		// window.removeEventListener('scroll', this.setOffset)
-
 		cancelAnimationFrame(this.aniFrame)
 	}
 }
@@ -123,7 +92,7 @@ export default {
 }
 
 .slider {
-	animation: horizontal-scroll 50s linear infinite;
+	animation: horizontal-scroll 150s linear infinite;
 }
 
 .slider-wrapper {
