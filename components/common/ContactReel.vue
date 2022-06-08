@@ -4,8 +4,9 @@
 			<template v-for="n in 4">
 				<a href="mailto:hello@seangrindal.dev" target="_blank">Email</a>
 				<!-- <a href="https://twitter.com/GrindalSean" target="_blank">Twitter</a> -->
-				<a href="https://github.com/SeanGrindal" target="_blank">Github</a>
-				<a href="https://www.linkedin.com/in/sean-grindal-b26b0918b/" target="_blank">LinkedIn</a>
+				<!-- <a href="https://github.com/SeanGrindal" target="_blank">Github</a> -->
+				<a href="https://twitter.com/GrindalSean" target="_blank">Twitter</a>
+				<!-- <a href="https://www.linkedin.com/in/sean-grindal-b26b0918b/" target="_blank">LinkedIn</a> -->
 				<a href="https://medium.com/@sean37gl" target="_blank">Medium</a>
 			</template>
 		</div>

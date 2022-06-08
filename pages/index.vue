@@ -2,10 +2,10 @@
 	<div class="Home">
 		<landing />
 		<theme-changer />
-		<further-about />
+		<!-- <further-about />
 		<section-header text="Projects" class="project-section-header" />
-		<work-grid :projects="workProjs" />
-		<section-header text="Experiments" class="experiments-section-header" />
+		<work-grid :projects="workProjs" /> -->
+		<section-header text="Sandbox" class="experiments-section-header" />
 		<work-grid type="exps" :projects="experiments" />
 		<contact-section />
 	</div>

@@ -1,7 +1,17 @@
 <template lang="html">
 	<div class="Landing" id="landing">
 		<section class="slide-in-text-wrapper">
-			<slide-in-text side="right"> My name's Sean Grindal. </slide-in-text>
+			<slide-in-text> This summer I'm doing </slide-in-text>
+
+			<slide-in-text> Launch House, Y-Combinator, </slide-in-text>
+
+			<!-- <slide-in-text> working on communites, </slide-in-text> -->
+
+			<slide-in-text> and building a DAO for </slide-in-text>
+
+			<slide-in-text> founders and innovators </slide-in-text>
+
+			<!-- <slide-in-text side="right"> My name's Sean Grindal. </slide-in-text>
 
 			<slide-in-text> I'm a full-stack web developer </slide-in-text>
 
@@ -11,7 +21,7 @@
 
 			<slide-in-text side="right"> and digital agencies build </slide-in-text>
 
-			<slide-in-text> their unique digital products. </slide-in-text>
+			<slide-in-text> their unique digital products. </slide-in-text> -->
 
 			<!-- <h1 class="landing-heading">
 				<line-reveal
