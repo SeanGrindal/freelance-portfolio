@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/work/zenfully-landing", {data:[{}],fetch:{},mutations:[]});
