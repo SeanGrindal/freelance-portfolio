@@ -8,8 +8,8 @@ if (process.client) {
 const createStore = () => {
 	return new Vuex.Store({
 		state: {
-			workPages: workData.pages.filter(pg => pg.type == 'work'),
-			experiments: workData.pages.filter(pg => pg.type == 'exps'),
+			workPages: workData.pages.filter(pg => true),
+			experiments: workData.pages.filter(pg => true),
 			isMobile: null,
 			slideRevealed: false
 		},

@@ -8,7 +8,7 @@
 			<nav class="sz-small" v-show="isHome">
 				<a href="/#landing">About</a>
 				<!-- <a href="/#work">Work</a> -->
-				<a href="/#exps">Stuff</a>
+				<a href="/#exps">Sandbox</a>
 				<a href="/#contact">Contact</a>
 			</nav>
 		</transition>

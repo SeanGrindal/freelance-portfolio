@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/work/custom-cursor-js", {data:[{}],fetch:{},mutations:[]});

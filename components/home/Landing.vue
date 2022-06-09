@@ -9,7 +9,7 @@
 
 			<slide-in-text> and building a DAO for </slide-in-text>
 
-			<slide-in-text> founders and innovators </slide-in-text>
+			<slide-in-text> founders and innovators ✌️</slide-in-text>
 
 			<!-- <slide-in-text side="right"> My name's Sean Grindal. </slide-in-text>
 

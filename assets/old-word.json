@@ -1,0 +1,297 @@
+{
+  "type": "work",
+  "id": "magellan-portfolio",
+  "pageName": "Magellan's Portfolio",
+  "description": "This portfolio for Magellan Rubin is one of the many film portfolios I've developed with ANOA. The site was built using the internal development patterns and architecture I had the opportunity of planning and leading the development of as a foundation.",
+  "card": {
+    "src": "/images/magellan/mgl-home-tablet.jpg"
+  },
+  "details": {
+    "technology": ["ES6", "Nuxt", "Vue.js", "Headless CMS"],
+    "misc": ["Lead Developer", "2021"],
+    "projectType": ["Portfolio", "Film Project", "ANOA"]
+  },
+  "pageContent": {
+    "link": "https://mglln.co/",
+    "info": "This portfolio for Magellan Rubin is one of the many film portfolios I've developed with ANOA. The site was built using the internal development patterns and architecture I had the opportunity of planning and leading the development of as a foundation.",
+    "rows": [
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/magellan/mgl-dsk.jpg",
+          "alt": "desktop screenshot of the website",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "info",
+        "img": {
+          "src": "/images/magellan/mgl-tablet.jpg",
+          "alt": "tablet screenshot of the website",
+          "imgType": "tablet"
+        },
+        "direction": "normal",
+        "heading": "My Role",
+        "text": "I handled the entire development of Magellan's site. Using the tools I had developed at ANOA I constructed a backend CMS tailored for Magellan's specific needs and implemented a custom frontend working closely with designers to deliver on Magellan's vision."
+      },
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/magellan/frames-dsk.jpg",
+          "alt": "desktop screenshot of a work page",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "info",
+        "img": {
+          "src": "/images/magellan/mgl-mob.jpg",
+          "alt": "mobile website screenshot",
+          "imgType": "mobile"
+        },
+        "direction": "reverse",
+        "text": ["Simple but clean", "design focused on", "showcasing work"]
+      }
+    ]
+  }
+},
+{
+  "type": "work",
+  "id": "creatives-landing",
+  "pageName": "Creatives Landing",
+  "description": "Creatives landing is a digital experience developed for Motiv Studio to attract creative clients.",
+  "card": {
+    "src": "/images/creative-landing/brand-tablet.jpg"
+  },
+  "details": {
+    "technology": ["ES6", "SCSS", "Pug", "Node.js"],
+    "misc": ["Lead Frontend Dev", "Oct 2019"],
+    "projectType": ["Portfolio", "Creative", "Digital Experience"]
+  },
+  "pageContent": {
+    "link": "https://creatives.motivstud.io/",
+    "info": "Lead frontend developer for Creatives landing, an interactive portfolio page built for Motiv Studio showcasing their creative projects and digital talent.",
+    "rows": [
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/creative-landing/landing-desktop.jpg",
+          "alt": "desktop screenshot of website",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/creative-landing/brand-desktop.jpg",
+          "alt": "desktop screenshot of the website",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "info",
+        "img": {
+          "src": "/images/creative-landing/landing-mobile.jpg",
+          "alt": "tablet screenshot of the website",
+          "imgType": "mobile"
+        },
+        "direction": "normal",
+        "heading": "My Role",
+        "text": "For this project, I was tasked with developing the entirety of the frontend experience. I designed and built out the architecture of the website from scratch, planning accordingly for the necessary features to make this project shine: unique animations, slide-based scroll, and its various interactions."
+      },
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/creative-landing/approach-desktop.jpg",
+          "alt": "desktop screenshot of website",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "info",
+        "img": {
+          "src": "/images/creative-landing/whatwedo-tablet.jpg",
+          "alt": "tablet website screenshot",
+          "imgType": "tablet"
+        },
+        "direction": "reverse",
+        "text": [
+          "Playful scroll-based",
+          "slides and their animations",
+          "bring the site to life."
+        ]
+      },
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/creative-landing/contact-desktop.jpg",
+          "alt": "desktop screenshot of website",
+          "imgType": "desktop"
+        }
+      }
+    ]
+  }
+},
+{
+  "type": "work",
+  "id": "ricochet-landing",
+  "pageName": "Ricochet Landing",
+  "description": "Ricochet landing was developed for Motiv Studio for a digital data analyses project called Ricochet.",
+  "card": {
+    "src": "/images/ricochet-landing/whatwedo-tablet.jpg"
+  },
+  "details": {
+    "technology": ["ES6", "SCSS", "Pug", "Node.js"],
+    "misc": ["Lead Frontend Dev", "Sept 2019"],
+    "projectType": ["Landing Page", "App Home", "Interactive Experience"]
+  },
+  "pageContent": {
+    "link": "https://ricochet.motivstud.io/",
+    "info": "Ricochet landing is a landing page I built for the startup app, Richocet, a tool that aims to help businesses track and visualize important interacting data, allowing them to boost sales and customer satisfaction.",
+    "rows": [
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/ricochet-landing/fullcapture.jpg",
+          "alt": "desktop screenshot of full Ricochet website",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "info",
+        "img": {
+          "src": "/images/ricochet-landing/platform-mobile.jpg",
+          "alt": "responsive mobile website screenshot",
+          "imgType": "mobile"
+        },
+        "direction": "normal",
+        "heading": "My Role",
+        "text": "For this project, I was brought on to handle all aspects of its visual and interactive experience. I worked closely with the design team to make sure my work delivered on what they had envisioned. The finished site is full of animation and interactions that keep potential users engaged while learning about the application."
+      },
+      {
+        "type": "doubleImg",
+        "imgs": [
+          {
+            "src": "/images/ricochet-landing/landing-tablet.jpg",
+            "alt": "mtablet website screenshot",
+            "imgType": "desktop"
+          },
+          {
+            "src": "/images/ricochet-landing/contact-tablet.jpg",
+            "alt": "tablet website screenshot",
+            "imgType": "desktop"
+          }
+        ]
+      }
+    ]
+  }
+},
+{
+  "type": "work",
+  "id": "zenfully-landing",
+  "pageName": "Zenfully Landing",
+  "description": "Zenfully landing was developed for Motiv Studio for a Binural Beats generating web application.",
+  "card": {
+    "src": "/images/zenfully-landing/landing-tablet.jpg"
+  },
+  "details": {
+    "technology": ["Vue.js", "Pug", "Scss", "Node.js"],
+    "misc": ["Lead Frontend Dev", "Nov 2018"],
+    "projectType": ["Landing Page", "App Home"]
+  },
+  "pageContent": {
+    "link": "https://zenfully.app/",
+    "info": "Zenfully Landing is a landing page I built for the web application Zenfully, a tool that helps users concentrate and sleep.",
+    "rows": [
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/zenfully-landing/fullcapture.jpg",
+          "alt": "screenshot of the whole Zenfully landing website",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "info",
+        "img": {
+          "src": "/images/zenfully-landing/deltafreq-mobile.jpg",
+          "alt": "mobile website screenshot",
+          "imgType": "mobile"
+        },
+        "direction": "normal",
+        "heading": "My Role",
+        "text": "I was brought on this project by Motiv Studio to build out the frontend features of this website. This project existed within the larger web application they were working on called Zenfully. They had already designed an architecture for the application which I learned and built the landing page within."
+      },
+      {
+        "type": "doubleImg",
+        "imgs": [
+          {
+            "src": "/images/zenfully-landing/home-mobile.jpg",
+            "alt": "mobile website screenshot",
+            "imgType": "mobile"
+          },
+          {
+            "src": "/images/zenfully-landing/howitworks-mobile.jpg",
+            "alt": "mobile website screenshot",
+            "imgType": "mobile"
+          }
+        ]
+      }
+    ]
+  }
+},
+{
+  "type": "work",
+  "id": "zenfully-app",
+  "pageName": "Zenfully App",
+  "description": "Zenfully App is a Binaural Beats generating web application. It intends to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
+  "card": {
+    "src": "/images/zenfully-app/home-tablet.jpg",
+    "imgType": "tablet"
+  },
+  "details": {
+    "technology": ["Vue.js", "Pug", "Scss", "Node.js"],
+    "misc": ["Frontend Dev", "December 2018", "Team: Motiv Studio"],
+    "projectType": ["Web Application", "Binural Beats Generator", "PWA"]
+  },
+  "pageContent": {
+    "link": "https://my.zenfully.app/sign-in",
+    "info": "Zenfully App is a Binaural Beats generating web application. It intends to help users concentrate and sleep better. I was brought on the project to work on specific components and functionality.",
+    "rows": [
+      {
+        "type": "img",
+        "imgData": {
+          "src": "/images/zenfully-app/signin-desktop.jpg",
+          "alt": "desktop sign-in screenshot of Zenfully",
+          "imgType": "desktop"
+        }
+      },
+      {
+        "type": "info",
+        "img": {
+          "src": "/images/zenfully-app/presets-mobile.jpg",
+          "alt": "mobile website screenshot",
+          "imgType": "mobile"
+        },
+        "direction": "normal",
+        "heading": "My Role",
+        "text": "I was brought on the project to build out the majority of the application's frontend components and parts of the functionality they controlled. I worked closely with other developers at Motiv Studio to implement my code with their existing framework and functionality."
+      },
+      {
+        "type": "doubleImg",
+        "imgs": [
+          {
+            "src": "/images/zenfully-app/home-mobile.jpg",
+            "alt": "mobile website screenshot",
+            "imgType": "mobile"
+          },
+          {
+            "src": "/images/zenfully-app/menu-mobile.jpg",
+            "alt": "mobile website screenshot",
+            "imgType": "mobile"
+          }
+        ]
+      }
+    ]
+  }
+}
