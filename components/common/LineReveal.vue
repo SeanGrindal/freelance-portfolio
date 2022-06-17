@@ -51,7 +51,6 @@ export default {
 
 	&.reveal--subheading {
 		font-size: 5.5vw;
-		font-weight: 600;
 
 		@media (min-width: $bk-medium) {
 			font-size: 3.75vw;
