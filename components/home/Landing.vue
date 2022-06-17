@@ -19,9 +19,7 @@
 
 			<slide-in-text> I help start-ups, businesses, </slide-in-text>
 
-			<slide-in-text> and agencies build </slide-in-text>
-
-			<slide-in-text> cool things. </slide-in-text>
+			<slide-in-text> and agencies build cool things.</slide-in-text>
 
 			<!-- <h1 class="landing-heading">
 				<line-reveal
