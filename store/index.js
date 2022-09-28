@@ -11,7 +11,7 @@ const createStore = () => {
 			workPages: workData.pages.filter(pg => true),
 			experiments: workData.pages.filter(pg => true),
 			isMobile: null,
-			slideRevealed: false
+			slideRevealed: true
 		},
 		getters: {
 			currentWorkPageNum: state => {

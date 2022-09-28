@@ -46,8 +46,7 @@ export default {
 				type: 'image/png',
 				sizes: '180x180',
 				href: '/favicons/apple-touch-icon.png'
-			},
-			{ rel: 'manifest', href: '/favicons/site.webmanifest' }
+			}
 		]
 	},
 	/*

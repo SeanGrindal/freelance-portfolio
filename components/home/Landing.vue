@@ -11,7 +11,7 @@
 
 			<!-- <slide-in-text> founders and innovators ✌️</slide-in-text> -->
 
-			<slide-in-text> My name's Sean Grindal. </slide-in-text>
+			<!-- <slide-in-text> My name's Sean Grindal. </slide-in-text>
 
 			<slide-in-text> I'm a full-stack web developer </slide-in-text>
 
@@ -19,7 +19,18 @@
 
 			<slide-in-text> I help start-ups, businesses, </slide-in-text>
 
-			<slide-in-text> and agencies build cool things.</slide-in-text>
+			<slide-in-text> and agencies build cool things.</slide-in-text> -->
+
+			<line-reveal
+				class="large-lines"
+				:lines="[
+					`Hey there! My name's Sean ✌🏻`,
+					`I'm a developer living in Toronto.`,
+					`I co-founded and run Innoco, `,
+					`and build with my fav startups`,
+					'through my agency, Deco.'
+				]"
+			/>
 
 			<!-- <h1 class="landing-heading">
 				<line-reveal
@@ -58,24 +69,43 @@ export default {
 		}
 	},
 	mounted() {
-		if (!this.slideRevealed) {
-			this._setThemeDark = this.setThemeDark
-			Emitter.once('INIT_ANIMATIONS', this._setThemeDark)
-		} else {
+		// if (!this.slideRevealed) {
+		// 	this._setThemeDark = this.setThemeDark
+		Emitter.once('INIT_ANIMATIONS', this.setThemeDark)
+		setTimeout(() => {
 			this.setThemeDark()
-		}
-	},
-	destroyed() {
-		if (document.querySelector('[data-theme="dark"]')) {
-			Emitter.emit('SET_THEME', 'light')
-		}
+		})
+		// }
 	}
 }
 </script>
 
 <style lang="scss" scoped>
 .Landing {
-	padding-top: 30vh;
+	padding-top: 24vh;
+	padding-right: 2vw;
+	display: flex;
+	justify-content: center;
+
+	.large-lines.Line-Reveal {
+		font-size: 5.5vw;
+		// text-align: center;
+		white-space: nowrap;
+		padding: 1vh 0.75rem;
+		font-weight: 700;
+
+		@media (min-width: $bk-large) {
+			font-size: 5vw;
+		}
+
+		@media (min-width: $bk-ultwd) {
+			font-size: 140px;
+		}
+
+		::v-deep .line {
+			padding: 1vh 0;
+		}
+	}
 
 	.slide-in-text-wrapper {
 		max-width: $bk-max;

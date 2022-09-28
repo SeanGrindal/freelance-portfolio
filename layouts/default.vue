@@ -11,7 +11,7 @@
 		<custom-cursor ref="customCursor" v-if="!isMobile" />
 		<div v-else></div>
 
-		<slide-reveal />
+		<!-- <slide-reveal /> -->
 	</div>
 </template>
 

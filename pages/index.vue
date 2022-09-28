@@ -1,19 +1,20 @@
 <template>
 	<div class="Home">
 		<landing />
-		<theme-changer />
+		<theme-changer>
+			<section-header text="Sandbox" class="experiments-section-header" />
+			<work-grid type="exps" :projects="experiments" />
+			<contact-section />
+		</theme-changer>
 		<!-- <further-about />
 		<section-header text="Projects" class="project-section-header" />
 		<work-grid :projects="workProjs" /> -->
-		<section-header text="Sandbox" class="experiments-section-header" />
-		<work-grid type="exps" :projects="experiments" />
-		<contact-section />
 	</div>
 </template>
 
 <script>
 import Landing from '~/components/home/Landing.vue'
-import ContactSection from '~/components/home/contactSection.vue'
+import ContactSection from '~/components/home/ContactSection.vue'
 import SectionHeader from '~/components/home/SectionHeader.vue'
 import WorkGrid from '~/components/work/WorkGrid.vue'
 import ThemeChanger from '~/components/common/ThemeChanger.vue'

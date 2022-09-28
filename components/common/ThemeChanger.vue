@@ -1,5 +1,7 @@
 <template lang="html">
-  <div class="Theme-Changer"></div>
+  <div class="Theme-Changer">
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -21,22 +23,18 @@ export default {
   },
   methods: {
     reveal() {
-      if (this.isMobile) return
-
       Emitter.emit('SET_THEME', 'light')
     },
     hide() {
-      if (this.isMobile) return
-
       Emitter.emit('SET_THEME', 'dark')
     }
   },
   destroyed() {
-    if (this.isMobile) return
+    // if (this.isMobile) return
 
-    if (document.querySelector('[data-theme="dark"]')) {
-      this.reveal()
-    }
+    // if (document.querySelector('[data-theme="dark"]')) {
+    //   this.reveal()
+    // }
   }
 }
 </script>
