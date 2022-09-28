@@ -1,11 +1,10 @@
-<template lang="html">
+<template>
 	<section class="Contact-Section" id="contact">
 		<div class="content">
-			<!-- <p class="say-hi">Say Hi</p> -->
 			<a href="mailto:sean@grindal.me" class="bold email-me">
-				<line-reveal class="two-lines" :lines="['sean@', 'grindal.me']" />
 				<line-reveal class="one-line" :lines="['sean@grindal.me']" />
 			</a>
+
 			<contact-reel />
 		</div>
 	</section>
@@ -44,8 +43,10 @@ export default {
 	}
 
 	.content {
+		position: relative;
 		display: flex;
 		flex-direction: column;
+		padding-bottom: 3rem;
 		width: 100%;
 
 		@media (min-width: $bk-medium) {
@@ -59,12 +60,12 @@ export default {
 	}
 
 	.Contact-Reel {
-		width: 100%;
-		max-width: none;
-
-		@media (min-width: $bk-medium) {
-			max-width: 450px;
-		}
+		width: calc(100% - 16px);
+		margin: 0 auto;
+		right: 0;
+		left: 0;
+		position: absolute;
+		bottom: 0;
 	}
 
 	.email-me {
@@ -73,21 +74,11 @@ export default {
 		margin-bottom: 2.5rem;
 
 		.one-line {
-			font-size: min(8vw, 200px);
-			display: none;
-		}
+			font-size: 9.6vw;
+			text-align: center;
 
-		.two-lines {
-			font-size: 10.5vw;
-		}
-
-		@media (min-width: $bk-medium) {
-			.two-lines {
-				display: none;
-			}
-
-			.one-line {
-				display: block;
+			@media (min-width: $bk-large) {
+				font-size: min(8.8vw, 200px);
 			}
 		}
 	}

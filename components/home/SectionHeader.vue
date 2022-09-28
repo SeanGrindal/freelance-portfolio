@@ -37,7 +37,7 @@ export default {
 
 			let offsetTop = this.$el.getBoundingClientRect().top - window.innerHeight / 2
 			this.aniFrame = requestAnimationFrame(() => {
-				this.$refs['slider'].style.transform = `translateY(${Math.round(offsetTop * -0.3)}px)`
+				this.$refs['slider'].style.transform = `translateY(${Math.round(offsetTop * -0.2)}px)`
 
 				this.setOffset()
 			})
@@ -72,7 +72,7 @@ export default {
 	display: inline-flex;
 	pointer-events: none;
 	opacity: 0.25;
-	font-size: 22vw;
+	font-size: 18vw;
 	padding-bottom: 0.25em;
 	will-change: transform;
 
@@ -92,7 +92,11 @@ export default {
 }
 
 .slider {
-	animation: horizontal-scroll 150s linear infinite;
+	animation: horizontal-scroll 75s linear infinite;
+
+	@media (min-width: $bk-large) {
+		animation: horizontal-scroll 150s linear infinite;
+	}
 }
 
 .slider-wrapper {

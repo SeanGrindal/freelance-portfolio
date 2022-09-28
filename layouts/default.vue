@@ -94,13 +94,9 @@ export default {
 		Emitter.emit('APP_READY')
 
 		console.log('%cDeveloped and designed by @SeanGrindal', 'font-weight: bold; color: #FF5050;')
-		console.log(
-			"%cI am currently looking for an software internship for summer '22 .",
-			'font-weight: bold;'
-		)
 	},
 	beforeDestroy() {
-		Emitter.removeListener('SET_THEME', this._seTheme)
+		Emitter.removeListener('SET_THEME', this._setTheme)
 	}
 }
 </script>

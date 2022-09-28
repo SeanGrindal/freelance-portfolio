@@ -46,7 +46,9 @@ export default {
 
 <style lang="scss" scoped>
 .Theme-Changer {
-	margin-top: 30vh;
+	@media (min-aspect-ratio: 9/12) {
+		margin-top: 30vh;
+	}
 }
 
 .project-section-header {
@@ -55,7 +57,11 @@ export default {
 }
 
 .experiments-section-header {
-	margin-top: 56vh;
-	margin-bottom: 6vh;
+	margin-top: 14vh;
+
+	@media (min-aspect-ratio: 1/1) {
+		margin-top: 56vh;
+		margin-bottom: 4vh;
+	}
 }
 </style>

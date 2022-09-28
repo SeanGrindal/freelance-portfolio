@@ -15,7 +15,7 @@ export default {
 				hid: 'description',
 				name: 'description',
 				content:
-					"My name's Sean Grindal. I am a full-stack web developer working from Toronto, Ontario. I work with startups, digital agencies, and aspiring individuals to build their unique digital products. "
+					"Hey! I run Innoco, a community for young founders and renegades. We host worldwide events and hacker houses with top founders and tech leaders. But at my core, I'm a developer. I began contracting as one when I was 14 and recently co-founded Deco to help startups lay strong technical and design foundations. I was also a founding engineer at Nya and wrote the MVP that helped us get accepted into YC; previously led development at ANOA; and if I'm not on my way to some airport, I'm taking computer science at the University of Toronto."
 			},
 			{
 				name: 'keywords',

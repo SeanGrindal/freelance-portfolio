@@ -1,18 +1,18 @@
 // COLORS
 html {
-  // COLORS
-  --cl-white: #FFF;
-  --cl-black: #0E0E11;
-  --cl-red: #FF5050;
-  --cl-gray: #404040;
-  --cl-light-gray: #f5f6fa;
+	// COLORS
+	--cl-white: #fff;
+	--cl-black: #0e0e11;
+	--cl-red: #ff5050;
+	--cl-gray: #404040;
+	--cl-light-gray: #f5f6fa;
 
-  &[data-theme='dark'] {
-    --cl-white: #0E0E11;
-    --cl-black: #FFF;
-    --cl-gray: #E3E3E3;
-    --cl-light-gray: #14151a;
-  }
+	&[data-theme='dark'] {
+		--cl-white: #0e0e11;
+		--cl-black: #fff;
+		--cl-gray: #e3e3e3;
+		--cl-light-gray: #14151a;
+	}
 }
 
 // BREAKPOINTS
@@ -22,7 +22,6 @@ $bk-medium: 768px;
 $bk-large: 1024px;
 $bk-max: 1600px;
 $bk-ultwd: 2260px;
-
 
 // TRANSITION
 $ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);

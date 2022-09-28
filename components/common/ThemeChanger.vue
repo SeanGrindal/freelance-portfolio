@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="Theme-Changer">
     <slot />
   </div>
@@ -23,6 +23,7 @@ export default {
   },
   methods: {
     reveal() {
+      console.log("hi")
       Emitter.emit('SET_THEME', 'light')
     },
     hide() {

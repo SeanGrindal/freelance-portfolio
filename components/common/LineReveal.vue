@@ -1,7 +1,7 @@
-<template lang="html">
+<template>
 	<div class="Line-Reveal io-animate-in">
 		<div :class="['line', `line-${i}`]" v-for="(text, i) in lines" :key="i">
-			<span ref="lineText">{{ text }}</span>
+			<div ref="lineText" v-html="text"></div>
 		</div>
 	</div>
 </template>
@@ -87,9 +87,32 @@ export default {
 		overflow: hidden;
 	}
 
-	.line span {
+	.line div {
 		display: inline-block;
 		transform: translateY(100%);
+	}
+
+	::v-deep {
+		a {
+			position: relative;
+
+			&:hover::after {
+				opacity: 0.8;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: calc(100% - 4px);
+				bottom: 0;
+				left: 2px;
+				height: 4px;
+				border-radius: 2px / 50%;
+				background-color: var(--cl-black);
+				opacity: 0.3;
+				transition: opacity 240ms $ease-out-cubic;
+			}
+		}
 	}
 }
 </style>

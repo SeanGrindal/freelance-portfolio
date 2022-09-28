@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
 	<div class="Landing" id="landing">
 		<section class="slide-in-text-wrapper">
 			<!-- <slide-in-text> This summer I'm doing </slide-in-text> -->
@@ -24,24 +24,13 @@
 			<line-reveal
 				class="large-lines"
 				:lines="[
-					`Hey there! My name's Sean ✌🏻`,
+					`Hey there! My name's Sean 👋🏻`,
 					`I'm a developer living in Toronto.`,
-					`I co-founded and run Innoco, `,
+					`I co-founded and run ${innoco}, `,
 					`and build with my fav startups`,
-					'through my agency, Deco.'
+					`through my agency, ${deco}.`
 				]"
 			/>
-
-			<!-- <h1 class="landing-heading">
-				<line-reveal
-				class="medium reveal--heading"
-				:lines="[
-					`I'm a freelance`,
-					'web developer',
-					'based in Canada.',
-				]"
-				/>
-			</h1> -->
 		</section>
 	</div>
 </template>
@@ -63,6 +52,10 @@ export default {
 	computed: {
 		...mapGetters(['slideRevealed'])
 	},
+	data: () => ({
+		innoco: '<a href="https://innoco.club" target="_blank">Innoco</a>',
+		deco: '<a href="https://withdeco.xyz" target="_blank">Deco</a>'
+	}),
 	methods: {
 		setThemeDark() {
 			Emitter.emit('SET_THEME', 'dark')
@@ -82,10 +75,15 @@ export default {
 
 <style lang="scss" scoped>
 .Landing {
-	padding-top: 24vh;
+	padding-top: 12vh;
 	padding-right: 2vw;
 	display: flex;
 	justify-content: center;
+
+	@media (min-aspect-ratio: 9/12) {
+		min-height: 90vh;
+		padding-top: 24vh;
+	}
 
 	.large-lines.Line-Reveal {
 		font-size: 5.5vw;
@@ -98,12 +96,16 @@ export default {
 			font-size: 5vw;
 		}
 
-		@media (min-width: $bk-ultwd) {
-			font-size: 140px;
+		@media (min-width: 1400px) {
+			font-size: min(4.4vw, 120px);
+		}
+
+		@media (min-width: 2000px) {
+			font-size: min(4vw, 120px);
 		}
 
 		::v-deep .line {
-			padding: 1vh 0;
+			margin: 1vh 0;
 		}
 	}
 

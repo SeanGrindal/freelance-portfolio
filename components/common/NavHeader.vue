@@ -1,8 +1,12 @@
-<template lang="html">
+<template>
 	<header class="Nav-Header">
-		<nuxt-link class="logo" to="/">
-			<span>S</span>
-			<span class="bold logo-g">G</span>
+		<nuxt-link class="logo" to="/" @click.native="goTop">
+			<!-- <span>S</span>
+			<span class="bold logo-g">G</span> -->
+			✌🏻✨
+			<!-- 👋🏻  -->
+			<!-- 👁️👅👁️ -->
+			<!-- ☝🏻 -->
 		</nuxt-link>
 		<transition name="fade">
 			<nav class="sz-small" v-show="isHome">
@@ -39,6 +43,13 @@ export default {
 				left: 0,
 				top: el.getBoundingClientRect().top + window.scrollY
 			})
+		},
+		goTop() {
+			window.scroll({
+				behavior: 'smooth',
+				left: 0,
+				top: 0
+			})
 		}
 	},
 	mounted() {
@@ -64,6 +75,7 @@ export default {
 	right: 0;
 	max-width: $bk-max;
 	padding: 0.25em 0;
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	pointer-events: none;
@@ -71,11 +83,11 @@ export default {
 	z-index: 100;
 
 	@media (min-width: $bk-large) {
-		padding: 1em 0;
+		padding: 0.5em;
 	}
 
 	@media (min-width: $bk-ultwd) {
-		padding: 4em 0;
+		padding: 2.5em 0;
 		max-width: $bk-ultwd;
 	}
 
@@ -90,7 +102,8 @@ export default {
 	}
 
 	.logo {
-		font-size: 1.75rem;
+		// font-size: 2.5rem;
+		font-size: 2rem;
 		letter-spacing: 0px;
 
 		.logo-g {
@@ -99,6 +112,7 @@ export default {
 	}
 
 	a {
+		// font-size: 2rem;
 		display: inline-block;
 		padding: 1.1rem 1rem;
 		mix-blend-mode: exclusion;
