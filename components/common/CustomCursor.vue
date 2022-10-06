@@ -43,7 +43,7 @@ export default {
 			this.type = e.type
 			switch (this.type) {
 				case 'default':
-					this.setDiameter(this.defaultDiameter, 0.3)
+					this.setDiameter(this.defaultDiameter, 0)
 					this.text = null
 					break
 				case 'enlarged':
@@ -124,7 +124,7 @@ export default {
 
 		align-items: center;
 		border: solid 1px var(--cl-red);
-		opacity: 0.3;
+		opacity: 0;
 		border-radius: 50%;
 		box-sizing: border-box;
 		position: absolute;

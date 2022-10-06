@@ -30,6 +30,11 @@ if (process.client) {
 }
 
 export default {
+	head: {
+		htmlAttrs: {
+			'data-theme': 'dark'
+		}
+	},
 	components: {
 		CustomCursor,
 		SlideReveal,
