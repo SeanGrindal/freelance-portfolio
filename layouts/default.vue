@@ -30,11 +30,11 @@ if (process.client) {
 }
 
 export default {
-	head: {
-		htmlAttrs: {
-			'data-theme': 'dark'
-		}
-	},
+	// head: {
+	// 	htmlAttrs: {
+	// 		'data-theme': 'dark'
+	// 	}
+	// },
 	components: {
 		CustomCursor,
 		SlideReveal,
@@ -51,8 +51,6 @@ export default {
 	methods: {
 		...mapActions(['checkMobile']),
 		setTheme(theme) {
-			if (this.isMobile) return
-
 			if (this.themeTimeout) {
 				clearTimeout(this.themeTimeout)
 				this.themeTimeout = null
@@ -77,6 +75,9 @@ export default {
 	},
 	beforeMount() {
 		this.checkMobile()
+
+		this._setTheme = this.setTheme
+		Emitter.on('SET_THEME', this._setTheme)
 	},
 	mounted() {
 		window.onbeforeunload = () => {
@@ -90,9 +91,6 @@ export default {
 		if (this.isMobile) {
 			document.querySelector('html').classList.add('isMobile')
 		}
-
-		this._setTheme = this.setTheme
-		Emitter.on('SET_THEME', this._setTheme)
 
 		this.tick()
 
@@ -118,7 +116,7 @@ html {
 	min-width: $bk-min;
 
 	&.theme-transition {
-		transition: all 1000ms !important;
+		transition: background-color 1000ms, color 1000ms !important;
 		transition-delay: 0 !important;
 	}
 
@@ -140,6 +138,17 @@ html {
 	main {
 		background-color: var(--cl-white);
 		transition: background-color 1000ms;
+
+		// &::before {
+		// 	content: '';
+		// 	display: block;
+		// 	height: 100%;
+		// 	width: 100%;
+		// 	top: 0;
+		// 	left: 0;
+		// 	position: absolute;
+		// 	background-color: var(--cl-black);
+		// }
 	}
 }
 

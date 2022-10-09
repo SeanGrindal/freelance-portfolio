@@ -106,11 +106,15 @@ export default {
 				width: calc(100% - 4px);
 				bottom: 0;
 				left: 2px;
-				height: 4px;
+				height: 2px;
 				border-radius: 2px / 50%;
 				background-color: var(--cl-black);
 				opacity: 0.3;
 				transition: opacity 240ms $ease-out-cubic;
+
+				@media (min-width: 1200px) {
+					height: 4px;
+				}
 			}
 		}
 	}

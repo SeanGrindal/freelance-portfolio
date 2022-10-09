@@ -74,7 +74,7 @@ export default {
 		height: 100%;
 		width: 0px;
 		top: 0;
-		box-shadow: 2px 0 20px 20px rgba(#fff, 1);
+		box-shadow: 2px 0 20px 20px var(--cl-white);
 		z-index: 2;
 	}
 
@@ -103,12 +103,18 @@ export default {
 		}
 
 		a {
+			color: var(--cl-black);
 			display: inline-table;
-			margin: 0 3em;
+			margin: 0 1em;
 			padding: 0.5em;
+
+			@media (min-width: 760px) {
+				margin: 0 3em;
+			}
 
 			svg {
 				height: 24px;
+				fill: var(--cl-black);
 			}
 
 			&:after {
