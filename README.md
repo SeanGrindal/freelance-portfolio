@@ -1,4 +1,4 @@
-# Freelance-Portfolio
+# Sean Grindal Personal Website
 
 ## Designed and developed by Sean Grindal
 
