@@ -9,4 +9,3 @@
 
 - Most of the code for this website is now outdated, so I wouldn't use it as reference for industry standard any longer.
 - Updated some content to reflect what I'm up to now.
-- Checkout Nuxt3, though!
