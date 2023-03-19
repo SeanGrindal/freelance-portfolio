@@ -1,7 +1,7 @@
-/experiments/dot-planet-rings/\* https://dot-planet-rings.netlify.app/:splat 200!
+/experiments/dot-planet-rings/* https://dot-planet-rings.netlify.app/:splat 200!
 
-/experiments/3d-equation-modeller/\* https://3d-equation-modeller.netlify.app/:splat 200!
+/experiments/3d-equation-modeller/* https://3d-equation-modeller.netlify.app/:splat 200!
 
-/experiments/minimax-example/\* https://seangrindal.github.io/Minimax-Example/:splat 200!
+/experiments/minimax-example/* https://seangrindal.github.io/Minimax-Example/:splat 200!
 
-/old/nya\* https://gleeful-caramel-18c264.netlify.app/ 200!
+/old/nya/* https://gleeful-caramel-18c264.netlify.app/ 200!
