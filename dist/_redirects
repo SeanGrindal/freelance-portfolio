@@ -4,4 +4,4 @@
 
 /experiments/minimax-example/* https://seangrindal.github.io/Minimax-Example/:splat 200!
 
-/old/nya/ https://old-nya-site.netlify.app/ 301
+/old/nya/* https://old-nya-landing.netlify.app/ 301
