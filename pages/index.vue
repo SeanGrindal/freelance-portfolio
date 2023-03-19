@@ -38,7 +38,10 @@ export default {
 			return this.$store.state.workPages
 		},
 		experiments() {
-			return this.$store.state.experiments
+			return this.$store.state.experiments.filter(proj => {
+				if (proj.show) return true
+				else return false
+			})
 		}
 	}
 }
